@@ -20,7 +20,12 @@ import {
   Zap,
 } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import {
+  type CSSProperties,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -590,16 +595,17 @@ export function MorTorqSite() {
                 type="button"
                 onClick={() => setSelectedImage(index)}
                 aria-label={`Open photo: ${image.label}`}
+                style={
+                  {
+                    "--image-ratio": `${image.width} / ${image.height}`,
+                  } as CSSProperties
+                }
               >
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
-                  sizes={
-                    index === 0
-                      ? "(max-width: 860px) 100vw, 58vw"
-                      : "(max-width: 560px) 100vw, 34vw"
-                  }
+                  sizes="(max-width: 560px) calc(100vw - 44px), (max-width: 860px) calc((100vw - 56px) / 2), min(calc((100vw - 88px) / 3), 464px)"
                 />
                 <span className="gallery-overlay">
                   <span>{image.label}</span>

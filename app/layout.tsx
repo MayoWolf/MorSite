@@ -1,25 +1,29 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Mono, Manrope, Space_Grotesk } from "next/font/google";
+import {
+  IBM_Plex_Mono,
+  IBM_Plex_Sans,
+  IBM_Plex_Sans_Condensed,
+} from "next/font/google";
 import "./globals.css";
 
-const displayFont = Space_Grotesk({
+const displayFont = IBM_Plex_Sans_Condensed({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["500", "600", "700"],
+  weight: ["600", "700"],
   display: "swap",
 });
 
-const bodyFont = Manrope({
+const bodyFont = IBM_Plex_Sans({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const monoFont = DM_Mono({
+const monoFont = IBM_Plex_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -124,11 +128,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const fontVariables = `${displayFont.variable} ${bodyFont.variable} ${monoFont.variable}`;
+
   return (
-    <html lang="en">
-      <body
-        className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
-      >
+    <html className={fontVariables} lang="en">
+      <body>
         {children}
         <script
           type="application/ld+json"

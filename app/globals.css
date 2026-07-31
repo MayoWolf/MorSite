@@ -9,9 +9,9 @@
   --blue: #5bb9e8;
   --line: rgba(12, 13, 15, 0.18);
   --line-light: rgba(255, 255, 255, 0.2);
-  --display: var(--font-display), Arial, sans-serif;
-  --body: var(--font-body), Arial, sans-serif;
-  --mono: var(--font-mono), ui-monospace, monospace;
+  --display: var(--font-display, "Arial Narrow"), Arial, sans-serif;
+  --body: var(--font-body, Arial), sans-serif;
+  --mono: var(--font-mono, ui-monospace), SFMono-Regular, Consolas, monospace;
 }
 
 * {
@@ -28,8 +28,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--body);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.62;
   text-rendering: optimizeLegibility;
 }
 
@@ -123,7 +123,7 @@ button {
 .brand-mark img {
   height: 38px;
   object-fit: contain;
-  width: 41px;
+  width: auto;
 }
 
 .brand-copy {
@@ -140,8 +140,8 @@ button {
 
 .brand-copy small {
   font-family: var(--mono);
-  font-size: 0.63rem;
-  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
   margin-top: 7px;
   text-transform: uppercase;
 }
@@ -318,7 +318,7 @@ button {
 
 .hero {
   color: #fff;
-  min-height: min(900px, 100svh);
+  min-height: min(840px, 100svh);
   overflow: hidden;
   position: relative;
 }
@@ -333,7 +333,7 @@ button {
 .hero-media img {
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center;
   width: 100%;
 }
 
@@ -357,7 +357,7 @@ button {
   justify-content: center;
   margin: 0 auto;
   max-width: 1480px;
-  min-height: min(900px, 100svh);
+  min-height: min(840px, 100svh);
   padding: 132px 32px 110px;
   position: relative;
   z-index: 3;
@@ -365,9 +365,9 @@ button {
 
 .eyebrow {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.07em;
   margin: 0 0 22px;
   text-transform: uppercase;
 }
@@ -384,19 +384,19 @@ button {
 
 .hero h1 {
   font-family: var(--display);
-  font-size: clamp(4rem, 9.6vw, 9.5rem);
-  letter-spacing: -0.075em;
-  line-height: 0.79;
+  font-size: clamp(4.2rem, 8.6vw, 8.8rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 0.86;
   margin: 0;
-  max-width: 880px;
+  max-width: 980px;
   text-transform: uppercase;
 }
 
 .hero h1 span {
   color: var(--orange);
   display: block;
-  margin-left: clamp(25px, 8vw, 120px);
-  white-space: nowrap;
+  margin-left: clamp(18px, 5vw, 72px);
 }
 
 .hero-lede {
@@ -440,6 +440,7 @@ button {
   font-family: var(--display);
   font-size: 1.55rem;
   font-weight: 700;
+  font-variant-numeric: tabular-nums lining-nums;
   height: 58px;
   justify-content: center;
   width: 58px;
@@ -452,7 +453,7 @@ button {
 
 .hero-result small {
   font-family: var(--mono);
-  font-size: 0.63rem;
+  font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -494,7 +495,7 @@ button {
   align-items: center;
   display: inline-flex;
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   gap: 8px;
   letter-spacing: 0.04em;
   margin-left: 24px;
@@ -511,9 +512,9 @@ button {
   align-items: center;
   display: flex;
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   gap: 13px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.07em;
   margin-bottom: 45px;
   text-transform: uppercase;
 }
@@ -545,8 +546,9 @@ button {
 .join-copy h2 {
   font-family: var(--display);
   font-size: clamp(3.2rem, 6.5vw, 7rem);
-  letter-spacing: -0.07em;
-  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -0.028em;
+  line-height: 0.93;
   margin: 0;
   text-transform: uppercase;
 }
@@ -565,7 +567,7 @@ button {
   font-family: var(--display);
   font-size: clamp(1.4rem, 2.3vw, 2.15rem);
   font-weight: 500;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.015em;
   line-height: 1.27;
   margin: 0 0 26px;
 }
@@ -612,7 +614,7 @@ button {
 .discipline-grid h3 {
   font-family: var(--display);
   font-size: 1.35rem;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   margin: 27px 0 10px;
 }
 
@@ -655,7 +657,7 @@ button {
 
 .season-topline p {
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.08em;
   margin: 8px 0 0;
   text-transform: uppercase;
@@ -674,15 +676,15 @@ button {
   color: var(--lime);
   font-family: var(--display);
   font-size: clamp(4.5rem, 9vw, 9rem);
-  letter-spacing: -0.08em;
-  line-height: 0.78;
+  letter-spacing: -0.03em;
+  line-height: 0.84;
   margin: 0;
 }
 
 .season-subtitle {
   font-family: var(--mono);
   font-size: 0.76rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   margin: 24px 0 0;
   text-transform: uppercase;
 }
@@ -711,7 +713,8 @@ button {
 }
 
 .biocore-art img {
-  aspect-ratio: 1.5;
+  aspect-ratio: 1280 / 850;
+  height: auto;
   object-fit: cover;
   transition: transform 0.55s ease;
   width: 100%;
@@ -727,7 +730,7 @@ button {
   bottom: 15px;
   display: flex;
   font-family: var(--mono);
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   gap: 9px;
   letter-spacing: 0.04em;
   padding: 12px 15px;
@@ -769,7 +772,7 @@ button {
 .countdown-heading small {
   color: rgba(255, 255, 255, 0.6);
   font-family: var(--mono);
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -795,14 +798,15 @@ button {
 .countdown strong {
   font-family: var(--display);
   font-size: clamp(2rem, 4vw, 3.5rem);
-  letter-spacing: -0.06em;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 
 .countdown span {
   color: rgba(255, 255, 255, 0.5);
   font-family: var(--mono);
-  font-size: 0.58rem;
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   margin-top: 8px;
   text-transform: uppercase;
@@ -840,6 +844,7 @@ button {
 
 .video-frame iframe {
   border: 0;
+  display: block;
   height: 100%;
   width: 100%;
 }
@@ -852,7 +857,7 @@ button {
 .video-label {
   color: var(--orange-deep);
   font-family: var(--mono);
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -860,10 +865,10 @@ button {
 .video-copy h3 {
   font-family: var(--display);
   font-size: clamp(2rem, 3vw, 3.2rem);
-  letter-spacing: -0.055em;
-  line-height: 1.02;
+  letter-spacing: -0.018em;
+  line-height: 1.06;
   margin: 20px 0;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .video-copy p {
@@ -901,14 +906,15 @@ button {
 .stat-grid span {
   color: var(--orange-deep);
   font-family: var(--mono);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
 }
 
 .stat-grid strong {
   display: block;
   font-family: var(--display);
   font-size: clamp(2rem, 3.8vw, 3.7rem);
-  letter-spacing: -0.06em;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: -0.02em;
   line-height: 1;
   margin: 21px 0 12px;
 }
@@ -927,7 +933,8 @@ button {
 }
 
 .impact-photo {
-  min-height: 780px;
+  align-self: center;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   position: relative;
 }
@@ -942,7 +949,7 @@ button {
 .impact-photo img {
   height: 100%;
   object-fit: cover;
-  object-position: 56% center;
+  object-position: center;
   transition: transform 0.7s ease;
   width: 100%;
 }
@@ -954,7 +961,7 @@ button {
 .impact-photo > span {
   bottom: 26px;
   font-family: var(--mono);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   left: 28px;
   letter-spacing: 0.08em;
   position: absolute;
@@ -1029,38 +1036,22 @@ button {
 }
 
 .gallery-grid {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 360px 300px;
+  columns: 3 300px;
+  column-gap: 12px;
 }
 
 .gallery-item {
+  aspect-ratio: var(--image-ratio);
   background: #1b1d21;
   border: 0;
+  break-inside: avoid;
   cursor: zoom-in;
-  grid-column: span 4;
+  display: block;
+  margin: 0 0 12px;
   overflow: hidden;
   padding: 0;
   position: relative;
-}
-
-.gallery-item-1 {
-  grid-column: span 7;
-}
-
-.gallery-item-2 {
-  grid-column: span 5;
-}
-
-.gallery-item-3,
-.gallery-item-4,
-.gallery-item-5 {
-  grid-column: span 4;
-}
-
-.gallery-item-6 {
-  display: none;
+  width: 100%;
 }
 
 .gallery-item img {
@@ -1070,10 +1061,6 @@ button {
     filter 0.4s ease,
     transform 0.55s ease;
   width: 100%;
-}
-
-.gallery-item-1 img {
-  object-position: center 44%;
 }
 
 .gallery-item:hover img {
@@ -1102,8 +1089,8 @@ button {
 .gallery-open {
   border: 1px solid rgba(255, 255, 255, 0.45);
   font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
   padding: 7px 10px;
   text-transform: uppercase;
 }
@@ -1143,7 +1130,7 @@ button {
 .video-pair span {
   color: var(--orange);
   font-family: var(--mono);
-  font-size: 0.58rem;
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1151,9 +1138,9 @@ button {
 .video-pair h3 {
   font-family: var(--display);
   font-size: clamp(1.25rem, 2vw, 1.75rem);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.015em;
   margin: 8px 0 0;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .partners-section {
@@ -1178,7 +1165,7 @@ button {
   font-family: var(--display);
   font-size: clamp(1.1rem, 2.1vw, 1.75rem);
   font-weight: 600;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.015em;
   line-height: 1.15;
 }
 
@@ -1263,7 +1250,7 @@ button {
 .footer-column h3 {
   color: rgba(255, 255, 255, 0.45);
   font-family: var(--mono);
-  font-size: 0.63rem;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   margin: 0 0 10px;
@@ -1292,7 +1279,7 @@ button {
   color: rgba(255, 255, 255, 0.38);
   display: flex;
   font-family: var(--mono);
-  font-size: 0.58rem;
+  font-size: 0.68rem;
   justify-content: space-between;
   letter-spacing: 0.05em;
   margin-top: 80px;
@@ -1332,9 +1319,11 @@ button {
 }
 
 .lightbox figure img {
+  height: auto;
   max-height: calc(88vh - 70px);
+  max-width: 100%;
   object-fit: contain;
-  width: 100%;
+  width: auto;
 }
 
 .lightbox figcaption {
@@ -1355,7 +1344,7 @@ button {
   color: rgba(255, 255, 255, 0.6);
   display: flex;
   font-family: var(--mono);
-  font-size: 0.6rem;
+  font-size: 0.68rem;
   gap: 7px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -1383,7 +1372,7 @@ button {
   font-family: var(--display);
   font-size: 48vw;
   font-weight: 700;
-  letter-spacing: -0.1em;
+  letter-spacing: -0.03em;
   line-height: 0.75;
   pointer-events: none;
   position: absolute;
@@ -1403,7 +1392,7 @@ button {
 .not-found h1 {
   font-family: var(--display);
   font-size: clamp(3.5rem, 8vw, 8rem);
-  letter-spacing: -0.07em;
+  letter-spacing: -0.025em;
   line-height: 0.87;
   margin: 0;
   max-width: 900px;
@@ -1592,7 +1581,8 @@ button {
   }
 
   .impact-photo {
-    min-height: 540px;
+    justify-self: center;
+    width: min(100%, 680px);
   }
 
   .impact-copy {
@@ -1606,22 +1596,11 @@ button {
   }
 
   .gallery-grid {
-    grid-template-rows: 340px 240px 240px;
+    columns: 2 260px;
   }
 
   .video-pair {
     grid-template-columns: 1fr;
-  }
-
-  .gallery-item-1 {
-    grid-column: span 12;
-  }
-
-  .gallery-item-2,
-  .gallery-item-3,
-  .gallery-item-4,
-  .gallery-item-5 {
-    grid-column: span 6;
   }
 
   .partner-list {
@@ -1653,6 +1632,10 @@ button {
 }
 
 @media (max-width: 560px) {
+  body {
+    font-size: 16px;
+  }
+
   .brand-mark {
     height: 42px;
     width: 42px;
@@ -1660,7 +1643,7 @@ button {
 
   .brand-mark img {
     height: 34px;
-    width: 37px;
+    width: auto;
   }
 
   .hero {
@@ -1673,9 +1656,9 @@ button {
   }
 
   .hero h1 {
-    font-size: clamp(3.35rem, 16vw, 5.4rem);
-    letter-spacing: -0.07em;
-    line-height: 0.86;
+    font-size: clamp(3.25rem, 15vw, 5.2rem);
+    letter-spacing: -0.02em;
+    line-height: 0.88;
   }
 
   .hero-lede {
@@ -1747,12 +1730,11 @@ button {
   }
 
   .countdown span {
-    font-size: 0.48rem;
+    font-size: 0.68rem;
   }
 
   .gallery-grid {
-    display: flex;
-    flex-direction: column;
+    columns: 1;
   }
 
   .video-pair {
@@ -1761,12 +1743,8 @@ button {
   }
 
   .gallery-item {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: var(--image-ratio);
     min-height: 0;
-  }
-
-  .gallery-item-6 {
-    display: block;
   }
 
   .partner-list {
