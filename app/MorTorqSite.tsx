@@ -3,14 +3,10 @@
 import {
   ArrowDown,
   ArrowRight,
-  AtSign,
-  ChevronRight,
   Clock3,
   ExternalLink,
   HeartHandshake,
   Mail,
-  MapPin,
-  Menu,
   Play,
   Trophy,
   Users,
@@ -20,19 +16,14 @@ import {
   Zap,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   type CSSProperties,
   useEffect,
   useMemo,
   useState,
 } from "react";
-
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Season", href: "#season" },
-  { label: "Impact", href: "#impact" },
-  { label: "Media", href: "#media" },
-];
+import { SiteFooter, SiteHeader } from "./SiteChrome";
 
 const gallery = [
   {
@@ -56,16 +47,6 @@ const gallery = [
       "https://drive.google.com/drive/folders/1OFhDUXirWz6g80URFSUERwTmma8bHMDJ",
   },
   {
-    src: "/images/field-drive-2026.webp",
-    alt: "MorTorq robot 1515 crossing the REBUILT field during the 2026 Aerospace Valley event",
-    label: "Across the REBUILT field",
-    width: 1600,
-    height: 1066,
-    credit: "MorTorq 2026 media",
-    creditUrl:
-      "https://drive.google.com/drive/folders/1OFhDUXirWz6g80URFSUERwTmma8bHMDJ",
-  },
-  {
     src: "/images/pit-repair-2026.webp",
     alt: "MorTorq students repairing robot 1515 together in the competition pit",
     label: "Between-match repairs",
@@ -76,24 +57,13 @@ const gallery = [
       "https://drive.google.com/drive/folders/1OFhDUXirWz6g80URFSUERwTmma8bHMDJ",
   },
   {
-    src: "/images/workshop-2026.webp",
-    alt: "MorTorq students manufacturing and assembling robot components in the Beverly Hills High School workshop",
-    label: "Inside the workshop",
-    width: 1200,
-    height: 1500,
-    credit: "MorTorq 2026 media",
-    creditUrl:
-      "https://drive.google.com/drive/folders/1OFhDUXirWz6g80URFSUERwTmma8bHMDJ",
-  },
-  {
-    src: "/images/celebration-2026.webp",
-    alt: "MorTorq students cheering together during the 2026 competition season",
-    label: "A season worth celebrating",
-    width: 1200,
-    height: 1600,
-    credit: "MorTorq 2026 media",
-    creditUrl:
-      "https://drive.google.com/drive/folders/1OFhDUXirWz6g80URFSUERwTmma8bHMDJ",
+    src: "/images/team-2023.webp",
+    alt: "MorTorq team members wearing orange team shirts outside Beverly Hills High School in 2023",
+    label: "MorTorq through the years",
+    width: 1800,
+    height: 1200,
+    credit: "MorTorq archive",
+    creditUrl: "https://www.instagram.com/frc1515/",
   },
 ];
 
@@ -110,7 +80,6 @@ function getCountdown() {
 }
 
 export function MorTorqSite() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [countdown, setCountdown] = useState({
     days: 0,
@@ -154,70 +123,7 @@ export function MorTorqSite() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-
-      <header className="site-header">
-        <div className="header-inner">
-          <a className="brand" href="#top" aria-label="MorTorq home">
-            <span className="brand-mark">
-              <Image
-                src="/images/mortorq-logo.png"
-                alt=""
-                width={274}
-                height={256}
-              />
-            </span>
-            <span className="brand-copy">
-              <strong>MorTorq</strong>
-              <small>FRC Team 1515</small>
-            </span>
-          </a>
-
-          <nav className="desktop-nav" aria-label="Main navigation">
-            {navItems.map((item) => (
-              <a key={item.label} href={item.href}>
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          <a
-            className="button button-small button-light header-cta"
-            href="#join"
-          >
-            Join the team
-            <ArrowRight aria-hidden="true" size={16} />
-          </a>
-
-          <button
-            className="menu-button"
-            type="button"
-            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((current) => !current)}
-          >
-            {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-          </button>
-        </div>
-
-        {menuOpen && (
-          <nav className="mobile-nav" aria-label="Mobile navigation">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-              >
-                {item.label}
-                <ChevronRight aria-hidden="true" size={18} />
-              </a>
-            ))}
-            <a href="#join" onClick={() => setMenuOpen(false)}>
-              Join or sponsor us
-              <ChevronRight aria-hidden="true" size={18} />
-            </a>
-          </nav>
-        )}
-      </header>
+      <SiteHeader />
 
       <main id="main">
         <section className="hero" id="top" aria-labelledby="hero-title">
@@ -515,13 +421,13 @@ export function MorTorqSite() {
         <section className="impact-section" id="impact">
           <div className="impact-photo">
             <Image
-              src="/images/workshop-2026.webp"
-              alt="MorTorq students building together in the Beverly Hills High School robotics workshop"
+              src="/images/celebration-2026.webp"
+              alt="MorTorq students celebrating together during the 2026 competition season"
               fill
               sizes="(max-width: 860px) 100vw, 55vw"
               loading="lazy"
             />
-            <span>2026 build season · MorTorq media</span>
+            <span>2026 competition season · MorTorq media</span>
           </div>
           <div className="impact-copy">
             <div className="section-kicker section-kicker-light">
@@ -605,7 +511,7 @@ export function MorTorqSite() {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  sizes="(max-width: 560px) calc(100vw - 44px), (max-width: 860px) calc((100vw - 56px) / 2), min(calc((100vw - 88px) / 3), 464px)"
+                  sizes="(max-width: 560px) calc(100vw - 44px), min(calc((100vw - 76px) / 2), 702px)"
                 />
                 <span className="gallery-overlay">
                   <span>{image.label}</span>
@@ -681,8 +587,12 @@ export function MorTorqSite() {
             </p>
           </div>
           <div className="join-actions">
+            <Link className="button button-dark" href="/leadership">
+              Meet the leads
+              <ArrowRight aria-hidden="true" size={18} />
+            </Link>
             <a
-              className="button button-dark"
+              className="button button-outline-dark"
               href="mailto:1515mortorq@gmail.com?subject=I%27d%20like%20to%20join%20MorTorq"
             >
               <Mail aria-hidden="true" size={18} />
@@ -701,97 +611,7 @@ export function MorTorqSite() {
         </section>
       </main>
 
-      <footer className="site-footer">
-        <div className="footer-main">
-          <div className="footer-brand">
-            <a className="brand brand-footer" href="#top">
-              <span className="brand-mark">
-                <Image
-                  src="/images/mortorq-logo.png"
-                  alt=""
-                  width={274}
-                  height={256}
-                />
-              </span>
-              <span className="brand-copy">
-                <strong>MorTorq</strong>
-                <small>FRC Team 1515</small>
-              </span>
-            </a>
-            <p>
-              Building robots—and the people who build the future—at Beverly
-              Hills High School.
-            </p>
-          </div>
-
-          <div className="footer-column">
-            <h3>Navigate</h3>
-            {navItems.map((item) => (
-              <a key={item.label} href={item.href}>
-                {item.label}
-              </a>
-            ))}
-            <a href="#join">Join us</a>
-          </div>
-
-          <div className="footer-column footer-contact">
-            <h3>Connect</h3>
-            <a href="mailto:1515mortorq@gmail.com">
-              <Mail aria-hidden="true" size={16} />
-              1515mortorq@gmail.com
-            </a>
-            <a
-              href="https://maps.google.com/?q=Beverly+Hills+High+School+241+S+Moreno+Dr+Beverly+Hills+CA+90212"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <MapPin aria-hidden="true" size={16} />
-              241 S. Moreno Dr, Beverly Hills
-            </a>
-            <a
-              href="https://www.instagram.com/frc1515/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AtSign aria-hidden="true" size={16} />
-              @frc1515
-            </a>
-          </div>
-
-          <div className="footer-column">
-            <h3>Competition</h3>
-            <a
-              href="https://www.thebluealliance.com/team/1515"
-              target="_blank"
-              rel="noreferrer"
-            >
-              The Blue Alliance
-              <ExternalLink aria-hidden="true" size={14} />
-            </a>
-            <a
-              href="https://frc-events.firstinspires.org/2026/team/1515"
-              target="_blank"
-              rel="noreferrer"
-            >
-              FIRST Event Results
-              <ExternalLink aria-hidden="true" size={14} />
-            </a>
-            <a
-              href="https://www.firstinspires.org/programs/frc/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              About FRC
-              <ExternalLink aria-hidden="true" size={14} />
-            </a>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <span>© 2026 MorTorq · FRC Team 1515</span>
-          <span>Student-led in Beverly Hills, California</span>
-        </div>
-      </footer>
+      <SiteFooter />
 
       {selected && (
         <div

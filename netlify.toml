@@ -17,7 +17,7 @@
 
 [[redirects]]
   from = "/leaders"
-  to = "/#about"
+  to = "/leadership"
   status = 301
 
 [[redirects]]

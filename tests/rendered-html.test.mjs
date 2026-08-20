@@ -12,9 +12,49 @@ test("exports a complete Netlify-ready site", async () => {
   assert.match(html, /BIOCORE/);
   assert.match(html, /Back in the finals/);
   assert.match(html, /mortorq-2026-recap\.mp4/);
+  assert.match(html, /href="\/leadership"[^>]*>[^<]*Meet the leads/);
   assert.match(html, /1515mortorq@gmail\.com/);
   assert.match(html, /application\/ld\+json/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
+});
+
+test("exports the leadership directory", async () => {
+  const html = await readFile(
+    new URL("../out/leadership.html", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(html, /<title>Leadership \| MorTorq<\/title>/);
+  assert.match(html, /The people/);
+  assert.match(html, /Wolf Nazari/);
+  assert.match(html, /Peter Shabani/);
+  assert.match(html, /Sophie Hong/);
+  assert.match(html, /Isabel Lo/);
+  assert.match(html, /Arianna/);
+  assert.match(html, /Henry Goldman/);
+  assert.match(html, /Edward Titov/);
+  assert.match(html, /To be announced/);
+  assert.match(html, /Assistant Electrical Lead/);
+  assert.match(html, /Portrait coming soon/);
+  assert.doesNotMatch(html, /The directory is growing|Real portraits\. Real stories/);
+
+  const desktopOrder = [
+    "Wolf Nazari",
+    "Sophie Hong",
+    "Henry Goldman",
+    "Arianna",
+    "Peter Shabani",
+    "Isabel Lo",
+    "Edward Titov",
+    "To be announced",
+  ];
+  let previousIndex = -1;
+
+  for (const name of desktopOrder) {
+    const nameIndex = html.indexOf(name);
+    assert.ok(nameIndex > previousIndex, `${name} is out of grid order`);
+    previousIndex = nameIndex;
+  }
 });
 
 test("ships core icons, manifest, media, and Netlify config", async () => {
@@ -25,7 +65,8 @@ test("ships core icons, manifest, media, and Netlify config", async () => {
     access(new URL("public/site.webmanifest", projectRoot)),
     access(new URL("public/images/team-2026.webp", projectRoot)),
     access(new URL("public/images/hero-2026.webp", projectRoot)),
-    access(new URL("public/images/workshop-2026.webp", projectRoot)),
+    access(new URL("public/images/celebration-2026.webp", projectRoot)),
+    access(new URL("public/images/team-2023.webp", projectRoot)),
     access(new URL("public/images/field-action-2026.webp", projectRoot)),
     access(new URL("public/images/biocore-2027.webp", projectRoot)),
     access(new URL("public/media/mortorq-2026-recap.mp4", projectRoot)),
