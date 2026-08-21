@@ -12,6 +12,7 @@ test("exports a complete Netlify-ready site", async () => {
   assert.match(html, /BIOCORE/);
   assert.match(html, /Back in the finals/);
   assert.match(html, /mortorq-2026-recap\.mp4/);
+  assert.match(html, /gathered with the competition crowd/);
   assert.match(html, /href="\/leadership"[^>]*>[^<]*Meet the leads/);
   assert.match(html, /1515mortorq@gmail\.com/);
   assert.match(html, /application\/ld\+json/);

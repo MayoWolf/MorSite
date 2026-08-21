@@ -422,7 +422,7 @@ export function MorTorqSite() {
           <div className="impact-photo">
             <Image
               src="/images/celebration-2026.webp"
-              alt="MorTorq students celebrating together during the 2026 competition season"
+              alt="MorTorq students gathered with the competition crowd during the 2026 season"
               fill
               sizes="(max-width: 860px) 100vw, 55vw"
               loading="lazy"
