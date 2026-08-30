@@ -221,7 +221,6 @@ export function MorTorqSite() {
           data-analytics-section="about"
         >
           <div className="section-kicker">
-            <span>01</span>
             Who we are
           </div>
           <div className="intro-grid">
@@ -296,7 +295,6 @@ export function MorTorqSite() {
         >
           <div className="season-topline">
             <div className="section-kicker section-kicker-light">
-              <span>02</span>
               The next challenge
             </div>
             <p>2026–2027 season</p>
@@ -381,7 +379,6 @@ export function MorTorqSite() {
           data-analytics-section="rebuilt_2026_result"
         >
           <div className="section-kicker">
-            <span>03</span>
             2026 REBUILT
           </div>
 
@@ -481,7 +478,6 @@ export function MorTorqSite() {
           </div>
           <div className="impact-copy">
             <div className="section-kicker section-kicker-light">
-              <span>04</span>
               Impact beyond the field
             </div>
             <h2>Build a robot. Grow a community.</h2>
@@ -537,7 +533,6 @@ export function MorTorqSite() {
           <div className="media-heading">
             <div>
               <div className="section-kicker">
-                <span>05</span>
                 From the field
               </div>
               <h2>See MorTorq in motion.</h2>
