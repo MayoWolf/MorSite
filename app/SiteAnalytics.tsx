@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import posthog from "posthog-js";
+import posthog, { type CaptureOptions } from "posthog-js";
 import { useEffect } from "react";
 
 const scrollThresholds = [25, 50, 75, 90, 100] as const;
@@ -9,9 +9,10 @@ const scrollThresholds = [25, 50, 75, 90, 100] as const;
 function capture(
   eventName: string,
   properties: Record<string, boolean | number | string>,
+  options?: CaptureOptions,
 ) {
   if (!posthog.__loaded) return;
-  posthog.capture(eventName, properties);
+  posthog.capture(eventName, properties, options);
 }
 
 export function SiteAnalytics() {
@@ -53,13 +54,20 @@ export function SiteAnalytics() {
         element.dataset.analyticsDestination ??
         (element instanceof HTMLAnchorElement ? element.href : "on_page");
 
-      capture("site_action", {
-        action,
-        destination,
-        label: element.dataset.analyticsLabel ?? action,
-        location: element.dataset.analyticsLocation ?? "unknown",
-        page_path: pathname,
-      });
+      capture(
+        "site_action",
+        {
+          action,
+          destination,
+          label: element.dataset.analyticsLabel ?? action,
+          location: element.dataset.analyticsLocation ?? "unknown",
+          page_path: pathname,
+        },
+        {
+          send_instantly: true,
+          transport: "sendBeacon",
+        },
+      );
     };
 
     const sectionObserver = new IntersectionObserver(

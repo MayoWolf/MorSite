@@ -81,10 +81,10 @@ test("ships core icons, manifest, media, and Netlify config", async () => {
 });
 
 test("configures anonymous PostHog analytics with maximum replay masking", async () => {
-  const analytics = await readFile(
-    new URL("../instrumentation-client.ts", import.meta.url),
-    "utf8",
-  );
+  const [analytics, siteAnalytics] = await Promise.all([
+    readFile(new URL("../instrumentation-client.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/SiteAnalytics.tsx", import.meta.url), "utf8"),
+  ]);
 
   assert.match(analytics, /cookieless_mode:\s*"always"/);
   assert.match(analytics, /person_profiles:\s*"never"/);
@@ -97,4 +97,6 @@ test("configures anonymous PostHog analytics with maximum replay masking", async
   assert.match(analytics, /blockSelector:\s*"img, video, iframe"/);
   assert.match(analytics, /capture_pageleave:\s*true/);
   assert.match(analytics, /capture_heatmaps:\s*true/);
+  assert.match(siteAnalytics, /send_instantly:\s*true/);
+  assert.match(siteAnalytics, /transport:\s*"sendBeacon"/);
 });
