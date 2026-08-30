@@ -5,6 +5,7 @@ import {
   IBM_Plex_Sans_Condensed,
 } from "next/font/google";
 import "./globals.css";
+import { SiteAnalytics } from "./SiteAnalytics";
 
 const displayFont = IBM_Plex_Sans_Condensed({
   subsets: ["latin"],
@@ -134,6 +135,7 @@ export default function RootLayout({
     <html className={fontVariables} lang="en">
       <body>
         {children}
+        <SiteAnalytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

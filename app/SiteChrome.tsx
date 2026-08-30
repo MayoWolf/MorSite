@@ -32,7 +32,14 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link className="brand" href="/" aria-label="MorTorq home">
+        <Link
+          className="brand"
+          href="/"
+          aria-label="MorTorq home"
+          data-analytics-action="navigation"
+          data-analytics-label="home_brand"
+          data-analytics-location="header"
+        >
           <span className="brand-mark">
             <Image
               src="/images/mortorq-logo.png"
@@ -57,6 +64,9 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
               }
               key={item.label}
               href={item.href}
+              data-analytics-action="navigation"
+              data-analytics-label={item.label.toLowerCase()}
+              data-analytics-location="desktop_header"
             >
               {item.label}
             </Link>
@@ -66,6 +76,9 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
         <Link
           className="button button-small button-light header-cta"
           href="/#join"
+          data-analytics-action="join_interest"
+          data-analytics-label="join_the_team"
+          data-analytics-location="desktop_header"
         >
           Join the team
           <ArrowRight aria-hidden="true" size={16} />
@@ -77,6 +90,9 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
           aria-label={menuOpen ? "Close navigation" : "Open navigation"}
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
+          data-analytics-action="mobile_menu_toggle"
+          data-analytics-label={menuOpen ? "close_menu" : "open_menu"}
+          data-analytics-location="header"
           onClick={() => setMenuOpen((current) => !current)}
         >
           {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
@@ -98,13 +114,22 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
               }
               key={item.label}
               href={item.href}
+              data-analytics-action="navigation"
+              data-analytics-label={item.label.toLowerCase()}
+              data-analytics-location="mobile_menu"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
               <ChevronRight aria-hidden="true" size={18} />
             </Link>
           ))}
-          <Link href="/#join" onClick={() => setMenuOpen(false)}>
+          <Link
+            href="/#join"
+            data-analytics-action="join_interest"
+            data-analytics-label="join_or_sponsor"
+            data-analytics-location="mobile_menu"
+            onClick={() => setMenuOpen(false)}
+          >
             Join or sponsor us
             <ChevronRight aria-hidden="true" size={18} />
           </Link>
@@ -123,6 +148,9 @@ export function SiteFooter() {
             className="brand brand-footer"
             href="/"
             aria-label="MorTorq home"
+            data-analytics-action="navigation"
+            data-analytics-label="home_brand"
+            data-analytics-location="footer"
           >
             <span className="brand-mark">
               <Image
@@ -146,16 +174,34 @@ export function SiteFooter() {
         <div className="footer-column">
           <h3>Navigate</h3>
           {navItems.map((item) => (
-            <Link key={item.label} href={item.href}>
+            <Link
+              key={item.label}
+              href={item.href}
+              data-analytics-action="navigation"
+              data-analytics-label={item.label.toLowerCase()}
+              data-analytics-location="footer"
+            >
               {item.label}
             </Link>
           ))}
-          <Link href="/#join">Join us</Link>
+          <Link
+            href="/#join"
+            data-analytics-action="join_interest"
+            data-analytics-label="join_us"
+            data-analytics-location="footer"
+          >
+            Join us
+          </Link>
         </div>
 
         <div className="footer-column footer-contact">
           <h3>Connect</h3>
-          <a href="mailto:1515mortorq@gmail.com">
+          <a
+            href="mailto:1515mortorq@gmail.com"
+            data-analytics-action="contact"
+            data-analytics-label="email"
+            data-analytics-location="footer"
+          >
             <Mail aria-hidden="true" size={16} />
             1515mortorq@gmail.com
           </a>
@@ -163,6 +209,9 @@ export function SiteFooter() {
             href="https://maps.google.com/?q=Beverly+Hills+High+School+241+S+Moreno+Dr+Beverly+Hills+CA+90212"
             target="_blank"
             rel="noreferrer"
+            data-analytics-action="outbound_link"
+            data-analytics-label="school_map"
+            data-analytics-location="footer"
           >
             <MapPin aria-hidden="true" size={16} />
             241 S. Moreno Dr, Beverly Hills
@@ -171,6 +220,9 @@ export function SiteFooter() {
             href="https://www.instagram.com/frc1515/"
             target="_blank"
             rel="noreferrer"
+            data-analytics-action="social_link"
+            data-analytics-label="instagram"
+            data-analytics-location="footer"
           >
             <AtSign aria-hidden="true" size={16} />
             @frc1515
@@ -183,6 +235,9 @@ export function SiteFooter() {
             href="https://www.thebluealliance.com/team/1515"
             target="_blank"
             rel="noreferrer"
+            data-analytics-action="outbound_link"
+            data-analytics-label="the_blue_alliance"
+            data-analytics-location="footer"
           >
             The Blue Alliance
             <ExternalLink aria-hidden="true" size={14} />
@@ -191,6 +246,9 @@ export function SiteFooter() {
             href="https://frc-events.firstinspires.org/2026/team/1515"
             target="_blank"
             rel="noreferrer"
+            data-analytics-action="outbound_link"
+            data-analytics-label="first_event_results"
+            data-analytics-location="footer"
           >
             FIRST Event Results
             <ExternalLink aria-hidden="true" size={14} />
@@ -199,6 +257,9 @@ export function SiteFooter() {
             href="https://www.firstinspires.org/programs/frc/"
             target="_blank"
             rel="noreferrer"
+            data-analytics-action="outbound_link"
+            data-analytics-label="about_frc"
+            data-analytics-location="footer"
           >
             About FRC
             <ExternalLink aria-hidden="true" size={14} />

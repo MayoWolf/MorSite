@@ -126,7 +126,12 @@ export function MorTorqSite() {
       <SiteHeader />
 
       <main id="main">
-        <section className="hero" id="top" aria-labelledby="hero-title">
+        <section
+          className="hero"
+          id="top"
+          aria-labelledby="hero-title"
+          data-analytics-section="home_hero"
+        >
           <div className="hero-media" aria-hidden="true">
             <Image
               src="/images/hero-2026.webp"
@@ -152,7 +157,13 @@ export function MorTorqSite() {
               fresh from our strongest finish in sixteen years.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#season">
+              <a
+                className="button button-primary"
+                href="#season"
+                data-analytics-action="explore_season"
+                data-analytics-label="explore_our_season"
+                data-analytics-location="hero"
+              >
                 Explore our season
                 <ArrowDown aria-hidden="true" size={18} />
               </a>
@@ -161,6 +172,9 @@ export function MorTorqSite() {
                 href="https://www.youtube.com/watch?v=-hOItUDXMdI"
                 target="_blank"
                 rel="noreferrer"
+                data-analytics-action="watch_video"
+                data-analytics-label="watch_2026_finals"
+                data-analytics-location="hero"
               >
                 <span className="play-dot">
                   <Play aria-hidden="true" size={14} fill="currentColor" />
@@ -192,13 +206,20 @@ export function MorTorqSite() {
             href="https://www.firstinspires.org/programs/frc/game-and-season"
             target="_blank"
             rel="noreferrer"
+            data-analytics-action="season_details"
+            data-analytics-label="first_season_details"
+            data-analytics-location="news_rail"
           >
             Season details
             <ExternalLink aria-hidden="true" size={15} />
           </a>
         </section>
 
-        <section className="section intro-section" id="about">
+        <section
+          className="section intro-section"
+          id="about"
+          data-analytics-section="about"
+        >
           <div className="section-kicker">
             <span>01</span>
             Who we are
@@ -221,7 +242,13 @@ export function MorTorqSite() {
                 together. The robot is the result; the people we become are the
                 real win.
               </p>
-              <a className="text-link" href="#impact">
+              <a
+                className="text-link"
+                href="#impact"
+                data-analytics-action="explore_impact"
+                data-analytics-label="see_how_we_work"
+                data-analytics-location="about"
+              >
                 See how we work
                 <ArrowRight aria-hidden="true" size={17} />
               </a>
@@ -262,7 +289,11 @@ export function MorTorqSite() {
           </div>
         </section>
 
-        <section className="season-section" id="season">
+        <section
+          className="season-section"
+          id="season"
+          data-analytics-section="biocore_season"
+        >
           <div className="season-topline">
             <div className="section-kicker section-kicker-light">
               <span>02</span>
@@ -287,6 +318,9 @@ export function MorTorqSite() {
                 href="https://www.firstinspires.org/programs/frc/game-and-season"
                 target="_blank"
                 rel="noreferrer"
+                data-analytics-action="season_details"
+                data-analytics-label="explore_biocore"
+                data-analytics-location="season"
               >
                 Explore BIOCORE
                 <ExternalLink aria-hidden="true" size={17} />
@@ -299,6 +333,9 @@ export function MorTorqSite() {
               target="_blank"
               rel="noreferrer"
               aria-label="View official BIOCORE season resources"
+              data-analytics-action="season_resources"
+              data-analytics-label="official_biocore_resources"
+              data-analytics-location="season"
             >
               <Image
                 src="/images/biocore-2027.webp"
@@ -339,7 +376,10 @@ export function MorTorqSite() {
           </div>
         </section>
 
-        <section className="section result-section">
+        <section
+          className="section result-section"
+          data-analytics-section="rebuilt_2026_result"
+        >
           <div className="section-kicker">
             <span>03</span>
             2026 REBUILT
@@ -382,6 +422,9 @@ export function MorTorqSite() {
                   href="https://frc-events.firstinspires.org/2026/team/1515"
                   target="_blank"
                   rel="noreferrer"
+                  data-analytics-action="competition_results"
+                  data-analytics-label="official_2026_results"
+                  data-analytics-location="result_feature"
                 >
                   Official results
                   <ExternalLink aria-hidden="true" size={16} />
@@ -391,6 +434,9 @@ export function MorTorqSite() {
                   href="https://www.bhusd.org/news/2026-04-05/bhhs-mortorq-robotics-takes-2nd-place-at-aerospace-valley-reaches-finals-for-first-time-in-16-years"
                   target="_blank"
                   rel="noreferrer"
+                  data-analytics-action="press_story"
+                  data-analytics-label="bhusd_2026_story"
+                  data-analytics-location="result_feature"
                 >
                   Read the BHUSD story
                   <ExternalLink aria-hidden="true" size={16} />
@@ -418,7 +464,11 @@ export function MorTorqSite() {
           </div>
         </section>
 
-        <section className="impact-section" id="impact">
+        <section
+          className="impact-section"
+          id="impact"
+          data-analytics-section="impact"
+        >
           <div className="impact-photo">
             <Image
               src="/images/celebration-2026.webp"
@@ -466,14 +516,24 @@ export function MorTorqSite() {
                 </span>
               </li>
             </ul>
-            <a className="button button-outline-light" href="#join">
+            <a
+              className="button button-outline-light"
+              href="#join"
+              data-analytics-action="join_interest"
+              data-analytics-label="get_involved"
+              data-analytics-location="impact"
+            >
               Get involved
               <ArrowRight aria-hidden="true" size={17} />
             </a>
           </div>
         </section>
 
-        <section className="section media-section" id="media">
+        <section
+          className="section media-section"
+          id="media"
+          data-analytics-section="media_gallery"
+        >
           <div className="media-heading">
             <div>
               <div className="section-kicker">
@@ -487,6 +547,9 @@ export function MorTorqSite() {
               href="https://www.youtube.com/watch_videos?title=CA+District+Aerospace+Valley+Event+%28Team+1515%29&video_ids=8Pgxti0eePs%2Cs3jHBHdsT1w%2C7_trgLUpB3w%2CSlV00E8Kwn0%2CAL2WxK0b-aE%2CiKW4n7y3jmI%2C6PGhOZ_kOJY%2CEBOr7OyvyL8%2CsJEytbVgm5U%2CR8Ik4oAdzkI%2C0ULctxRf65Q%2CsWbFEAPMaOM%2Cbs5ecObdi2Q%2CvWTFYur-U68%2CvgjhZKR7j1s%2CRvRE5i_hQ_k%2C-hOItUDXMdI%2CgGLzO0Qkt24"
               target="_blank"
               rel="noreferrer"
+              data-analytics-action="watch_video"
+              data-analytics-label="watch_every_2026_match"
+              data-analytics-location="media_heading"
             >
               Watch every 2026 match
               <Video aria-hidden="true" size={18} />
@@ -499,6 +562,9 @@ export function MorTorqSite() {
                 className={`gallery-item gallery-item-${index + 1}`}
                 key={image.src}
                 type="button"
+                data-analytics-action="gallery_photo_opened"
+                data-analytics-label={image.label}
+                data-analytics-location="media_gallery"
                 onClick={() => setSelectedImage(index)}
                 aria-label={`Open photo: ${image.label}`}
                 style={
@@ -530,6 +596,7 @@ export function MorTorqSite() {
                   preload="metadata"
                   poster="/images/recap-poster.webp"
                   aria-label="MorTorq 2026 Aerospace Valley finals recap"
+                  data-analytics-video="2026_finals_recap"
                 >
                   <source
                     src="/media/mortorq-2026-recap.mp4"
@@ -562,7 +629,10 @@ export function MorTorqSite() {
           </div>
         </section>
 
-        <section className="partners-section">
+        <section
+          className="partners-section"
+          data-analytics-section="partners"
+        >
           <p className="eyebrow">Powered by our partners</p>
           <div className="partner-list" aria-label="Team sponsors">
             <span>Enterprise</span>
@@ -572,7 +642,11 @@ export function MorTorqSite() {
           </div>
         </section>
 
-        <section className="join-section" id="join">
+        <section
+          className="join-section"
+          id="join"
+          data-analytics-section="join"
+        >
           <div className="join-noise" aria-hidden="true" />
           <div className="join-copy">
             <p className="eyebrow">There’s a place for you here</p>
@@ -587,13 +661,22 @@ export function MorTorqSite() {
             </p>
           </div>
           <div className="join-actions">
-            <Link className="button button-dark" href="/leadership">
+            <Link
+              className="button button-dark"
+              href="/leadership"
+              data-analytics-action="meet_leadership"
+              data-analytics-label="meet_the_leads"
+              data-analytics-location="join"
+            >
               Meet the leads
               <ArrowRight aria-hidden="true" size={18} />
             </Link>
             <a
               className="button button-outline-dark"
               href="mailto:1515mortorq@gmail.com?subject=I%27d%20like%20to%20join%20MorTorq"
+              data-analytics-action="join_interest"
+              data-analytics-label="join_or_mentor"
+              data-analytics-location="join"
             >
               <Mail aria-hidden="true" size={18} />
               Join or mentor
@@ -603,6 +686,9 @@ export function MorTorqSite() {
               href="https://www.zeffy.com/donation-form/robotics-program"
               target="_blank"
               rel="noreferrer"
+              data-analytics-action="sponsor_interest"
+              data-analytics-label="sponsor_mortorq"
+              data-analytics-location="join"
             >
               Sponsor MorTorq
               <ExternalLink aria-hidden="true" size={17} />
@@ -627,6 +713,9 @@ export function MorTorqSite() {
             className="lightbox-close"
             type="button"
             aria-label="Close photo"
+            data-analytics-action="gallery_photo_closed"
+            data-analytics-label={selected.label}
+            data-analytics-location="lightbox"
             onClick={() => setSelectedImage(null)}
             autoFocus
           >
@@ -642,7 +731,14 @@ export function MorTorqSite() {
             />
             <figcaption>
               <span>{selected.label}</span>
-              <a href={selected.creditUrl} target="_blank" rel="noreferrer">
+              <a
+                href={selected.creditUrl}
+                target="_blank"
+                rel="noreferrer"
+                data-analytics-action="photo_credit"
+                data-analytics-label={selected.credit}
+                data-analytics-location="lightbox"
+              >
                 Photo: {selected.credit}
                 <ExternalLink aria-hidden="true" size={14} />
               </a>

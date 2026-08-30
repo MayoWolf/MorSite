@@ -65,6 +65,7 @@ export function LeadershipPage() {
         <section
           className="leadership-hero"
           aria-labelledby="leadership-title"
+          data-analytics-section="leadership_hero"
         >
           <div className="leadership-hero-grid" aria-hidden="true" />
           <div className="leadership-hero-mark" aria-hidden="true">
@@ -88,6 +89,7 @@ export function LeadershipPage() {
         <section
           className="section leadership-directory"
           aria-labelledby="directory-title"
+          data-analytics-section="leadership_directory"
         >
           <div className="leadership-intro">
             <div>
@@ -110,6 +112,7 @@ export function LeadershipPage() {
               <article
                 className={`leader-card ${"pending" in leader ? "leader-card-pending" : ""}`}
                 key={`${leader.department}-${leader.role}`}
+                data-analytics-section={`leadership_profile_${leader.name.toLowerCase().replaceAll(" ", "_")}`}
               >
                 <div className="leader-photo" aria-hidden="true">
                   <span className="leader-index">

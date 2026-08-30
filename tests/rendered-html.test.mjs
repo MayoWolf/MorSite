@@ -14,6 +14,9 @@ test("exports a complete Netlify-ready site", async () => {
   assert.match(html, /mortorq-2026-recap\.mp4/);
   assert.match(html, /gathered with the competition crowd/);
   assert.match(html, /href="\/leadership"[^>]*>[^<]*Meet the leads/);
+  assert.match(html, /data-analytics-section="home_hero"/);
+  assert.match(html, /data-analytics-action="sponsor_interest"/);
+  assert.match(html, /data-analytics-video="2026_finals_recap"/);
   assert.match(html, /1515mortorq@gmail\.com/);
   assert.match(html, /application\/ld\+json/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
@@ -37,6 +40,8 @@ test("exports the leadership directory", async () => {
   assert.match(html, /To be announced/);
   assert.match(html, /Assistant Electrical Lead/);
   assert.match(html, /Portrait coming soon/);
+  assert.match(html, /data-analytics-section="leadership_hero"/);
+  assert.match(html, /data-analytics-section="leadership_profile_wolf_nazari"/);
   assert.doesNotMatch(html, /The directory is growing|Real portraits\. Real stories/);
 
   const desktopOrder = [
@@ -73,4 +78,23 @@ test("ships core icons, manifest, media, and Netlify config", async () => {
     access(new URL("public/media/mortorq-2026-recap.mp4", projectRoot)),
     access(new URL("netlify.toml", projectRoot)),
   ]);
+});
+
+test("configures anonymous PostHog analytics with maximum replay masking", async () => {
+  const analytics = await readFile(
+    new URL("../instrumentation-client.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(analytics, /cookieless_mode:\s*"always"/);
+  assert.match(analytics, /person_profiles:\s*"never"/);
+  assert.match(analytics, /respect_dnt:\s*true/);
+  assert.match(analytics, /disable_capture_url_hashes:\s*true/);
+  assert.match(analytics, /mask_all_text:\s*true/);
+  assert.match(analytics, /mask_personal_data_properties:\s*true/);
+  assert.match(analytics, /maskAllInputs:\s*true/);
+  assert.match(analytics, /maskTextSelector:\s*"\*"/);
+  assert.match(analytics, /blockSelector:\s*"img, video, iframe"/);
+  assert.match(analytics, /capture_pageleave:\s*true/);
+  assert.match(analytics, /capture_heatmaps:\s*true/);
 });

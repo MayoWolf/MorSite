@@ -25,6 +25,46 @@ npm test
 Connect the repository to Netlify. The included `netlify.toml` runs the
 production build and publishes the generated `out` directory automatically.
 
+## PostHog analytics
+
+The site includes privacy-conscious PostHog product analytics, Web Analytics,
+heatmaps, Web Vitals, and session replay. Tracking initializes only on
+`team1515.com` and `www.team1515.com`; local and deploy-preview traffic is
+ignored unless debug mode is explicitly enabled.
+
+1. Create a PostHog Cloud project and copy its **project token**. Do not use a
+   personal API key.
+2. In **Settings → Project → Web analytics**, enable **Cookieless server hash
+   mode**. The site intentionally uses PostHog's cookieless mode, and PostHog
+   discards cookieless events until that project setting is enabled.
+3. In **Settings → Project → General**, configure IP data capture to discard
+   visitor IP addresses.
+4. In Netlify, add these production environment variables and redeploy:
+
+   ```text
+   NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN=phc_your_project_token
+   NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
+   ```
+
+   Use `https://eu.i.posthog.com` for a PostHog EU project.
+
+For an intentional local analytics test, place the same values in `.env.local`
+and add `NEXT_PUBLIC_POSTHOG_DEBUG=true`. Never set the debug variable in
+Netlify production.
+
+The integration records anonymous pageviews/page-leaves, section views, scroll
+depth, key site actions, gallery interactions, local-video progress, dead
+clicks, heatmaps, Web Vitals, browser errors, and replay. Replay masks every
+text node and input, removes query strings, and blocks images, videos, and
+iframes. Product analytics masks element text and common personal-data query
+parameters, ignores URL fragments, and respects Do Not Track. The site never
+calls `posthog.identify()` or creates person profiles.
+
+Useful dashboard events include `site_action`, `section_viewed`,
+`scroll_depth_reached`, `video_started`, `video_progress_reached`, and
+`video_completed`. PostHog also supplies `$pageview`, `$pageleave`,
+`$autocapture`, and Web Vitals events.
+
 ## Media sources
 
 - 2026 team photo: Beverly Hills Unified School District
