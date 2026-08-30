@@ -78,6 +78,15 @@ test("ships core icons, manifest, media, and Netlify config", async () => {
     access(new URL("public/media/mortorq-2026-recap.mp4", projectRoot)),
     access(new URL("netlify.toml", projectRoot)),
   ]);
+
+  const netlifyConfig = await readFile(
+    new URL("../netlify.toml", import.meta.url),
+    "utf8",
+  );
+  assert.match(netlifyConfig, /from = "\/tq\/static\/\*"/);
+  assert.match(netlifyConfig, /from = "\/tq\/array\/\*"/);
+  assert.match(netlifyConfig, /from = "\/tq\/\*"/);
+  assert.match(netlifyConfig, /host = "us\.i\.posthog\.com"/);
 });
 
 test("configures anonymous PostHog analytics with maximum replay masking", async () => {

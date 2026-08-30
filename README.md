@@ -43,14 +43,18 @@ ignored unless debug mode is explicitly enabled.
 
    ```text
    NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN=phc_your_project_token
-   NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
+   NEXT_PUBLIC_POSTHOG_HOST=/tq
    ```
 
-   Use `https://eu.i.posthog.com` for a PostHog EU project.
+   The included Netlify rules proxy `/tq` to the US PostHog ingest and asset
+   hosts. This keeps analytics traffic first-party and makes collection more
+   reliable in browsers with tracking protection, without requiring DNS
+   changes. Update all three proxy targets if the project moves to EU Cloud.
 
-For an intentional local analytics test, place the same values in `.env.local`
-and add `NEXT_PUBLIC_POSTHOG_DEBUG=true`. Never set the debug variable in
-Netlify production.
+For an intentional local analytics test, place the project token in
+`.env.local`, use `NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com`, and add
+`NEXT_PUBLIC_POSTHOG_DEBUG=true`. Never set the debug variable in Netlify
+production.
 
 The integration records anonymous pageviews/page-leaves, section views, scroll
 depth, key site actions, gallery interactions, local-video progress, dead

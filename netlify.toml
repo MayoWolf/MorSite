@@ -5,6 +5,28 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# First-party PostHog proxy. Keep the asset routes before the API catch-all.
+[[redirects]]
+  from = "/tq/static/*"
+  to = "https://us-assets.i.posthog.com/static/:splat"
+  host = "us-assets.i.posthog.com"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/tq/array/*"
+  to = "https://us-assets.i.posthog.com/array/:splat"
+  host = "us-assets.i.posthog.com"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/tq/*"
+  to = "https://us.i.posthog.com/:splat"
+  host = "us.i.posthog.com"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/about"
   to = "/#about"
