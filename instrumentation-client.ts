@@ -30,7 +30,6 @@ if (shouldInitialize && projectToken) {
       dom_event_allowlist: ["click"],
       element_allowlist: ["a", "button"],
     },
-    cookieless_mode: "always",
     person_profiles: "never",
     respect_dnt: true,
     mask_all_text: true,

@@ -89,13 +89,13 @@ test("ships core icons, manifest, media, and Netlify config", async () => {
   assert.match(netlifyConfig, /host = "us\.i\.posthog\.com"/);
 });
 
-test("configures anonymous PostHog analytics with maximum replay masking", async () => {
+test("configures privacy-limited PostHog analytics with maximum replay masking", async () => {
   const [analytics, siteAnalytics] = await Promise.all([
     readFile(new URL("../instrumentation-client.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/SiteAnalytics.tsx", import.meta.url), "utf8"),
   ]);
 
-  assert.match(analytics, /cookieless_mode:\s*"always"/);
+  assert.doesNotMatch(analytics, /cookieless_mode/);
   assert.match(analytics, /person_profiles:\s*"never"/);
   assert.match(analytics, /respect_dnt:\s*true/);
   assert.match(analytics, /disable_capture_url_hashes:\s*true/);

@@ -34,12 +34,7 @@ ignored unless debug mode is explicitly enabled.
 
 1. Create a PostHog Cloud project and copy its **project token**. Do not use a
    personal API key.
-2. In **Settings → Project → Web analytics**, enable **Cookieless server hash
-   mode**. The site intentionally uses PostHog's cookieless mode, and PostHog
-   discards cookieless events until that project setting is enabled.
-3. In **Settings → Project → General**, configure IP data capture to discard
-   visitor IP addresses.
-4. In Netlify, add these production environment variables and redeploy:
+2. In Netlify, add these production environment variables and redeploy:
 
    ```text
    NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN=phc_your_project_token
@@ -62,7 +57,10 @@ clicks, heatmaps, Web Vitals, browser errors, and replay. Replay masks every
 text node and input, removes query strings, and blocks images, videos, and
 iframes. Product analytics masks element text and common personal-data query
 parameters, ignores URL fragments, and respects Do Not Track. The site never
-calls `posthog.identify()` or creates person profiles.
+calls `posthog.identify()` or creates person profiles. It uses PostHog's
+standard browser storage to keep anonymous visitor and session activity
+connected; IP retention and GeoIP enrichment follow the project's PostHog
+settings.
 
 Useful dashboard events include `site_action`, `section_viewed`,
 `scroll_depth_reached`, `video_started`, `video_progress_reached`, and
