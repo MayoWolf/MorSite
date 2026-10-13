@@ -13,17 +13,31 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+The development listener binds to `127.0.0.1`. `npm start` is a local development
+alias; production hosting serves the static `out` directory.
+
 ## Validation
 
 ```bash
 npm run lint
 npm test
+npm audit --omit=dev
 ```
 
 ## Netlify
 
 Connect the repository to Netlify. The included `netlify.toml` runs the
 production build and publishes the generated `out` directory automatically.
+
+The build generates `out/_headers` with a Content Security Policy that hashes
+the exported inline scripts. It allows the local application, PostHog assets
+and ingest, and the existing YouTube embeds, blocks other script origins and
+unrecognized inline scripts, and prevents framing, object embeds, base-tag
+changes, and form submission. Inline styles remain allowed for React image
+layout. `netlify.toml` also configures HSTS and a legacy frame-denial header.
+Regenerate the headers with every build; adding a resource origin requires a
+deliberate policy update in `scripts/generate-security-headers.mjs`. Serve the
+generated `_headers` on other hosts as equivalent HTTP response headers.
 
 ## PostHog analytics
 
@@ -56,7 +70,10 @@ depth, key site actions, gallery interactions, local-video progress, dead
 clicks, heatmaps, Web Vitals, browser errors, and replay. Replay masks every
 text node and input, removes query strings, and blocks images, videos, and
 iframes. Product analytics masks element text and common personal-data query
-parameters, ignores URL fragments, and respects Do Not Track. The site never
+parameters and respects Do Not Track. Application filtering removes query strings
+and fragments from standard page/referrer URL properties, nested anchor
+attributes, custom action destinations, and replay request names before
+transmission. The site never
 calls `posthog.identify()` or creates person profiles. It uses PostHog's
 standard browser storage to keep anonymous visitor and session activity
 connected; IP retention and GeoIP enrichment follow the project's PostHog
@@ -66,6 +83,18 @@ Useful dashboard events include `site_action`, `section_viewed`,
 `scroll_depth_reached`, `video_started`, `video_progress_reached`, and
 `video_completed`. PostHog also supplies `$pageview`, `$pageleave`,
 `$autocapture`, and Web Vitals events.
+
+## Dependency maintenance
+
+Use `npm ci` for reproducible installs. Dependabot checks npm dependencies weekly.
+The security update was checked on October 13, 2026: the production dependency
+audit is clean. The full audit still reports the unpatched
+[braces recursion advisory](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)
+through the development-only Next ESLint/fast-glob/micromatch chain. It processes
+maintainer-controlled lint patterns, is absent from production dependencies, and
+has no published upstream fix. Do not run `npm audit fix --force` to downgrade
+the Next ESLint configuration across major versions. Recheck the full audit when
+updating tooling and remove this note when a compatible upstream fix is available.
 
 ## Media sources
 

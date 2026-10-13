@@ -38,3 +38,8 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# Local tool state and generated caches
+/.wrangler/
+/.vinext/
+*.tsbuildinfo

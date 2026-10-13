@@ -1,4 +1,5 @@
 import posthog from "posthog-js";
+import { sanitizeAnalyticsProperties, stripUrlDetails } from "./lib/analytics-privacy";
 
 const projectToken = process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN;
 const apiHost =
@@ -43,6 +44,13 @@ if (shouldInitialize && projectToken) {
       "token",
     ],
     disable_surveys: true,
+    before_send(event) {
+      if (!event) return null;
+      return {
+        ...event,
+        properties: sanitizeAnalyticsProperties(event.properties),
+      };
+    },
     session_recording: {
       blockSelector: "img, video, iframe",
       maskAllInputs: true,
@@ -52,7 +60,7 @@ if (shouldInitialize && projectToken) {
       recordCrossOriginIframes: false,
       maskCapturedNetworkRequestFn(request) {
         if (request.name) {
-          request.name = request.name.split("?")[0];
+          request.name = stripUrlDetails(request.name);
         }
         return request;
       },

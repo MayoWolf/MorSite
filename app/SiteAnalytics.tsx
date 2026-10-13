@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import posthog, { type CaptureOptions } from "posthog-js";
 import { useEffect } from "react";
+import { stripUrlDetails } from "../lib/analytics-privacy";
 
 const scrollThresholds = [25, 50, 75, 90, 100] as const;
 
@@ -58,7 +59,7 @@ export function SiteAnalytics() {
         "site_action",
         {
           action,
-          destination,
+          destination: stripUrlDetails(destination),
           label: element.dataset.analyticsLabel ?? action,
           location: element.dataset.analyticsLocation ?? "unknown",
           page_path: pathname,
