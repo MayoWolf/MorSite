@@ -22,6 +22,7 @@ const sponsors = [
   { name: "Optimus Properties, LLC", mark: "optimus", href: "https://optimuspropertiesllc.com/", width: 1000, height: 250 },
   { name: "Rubel + Hartley", mark: "rubel-hartley", href: "https://latopalmspringsrealestate.com/", width: 390, height: 193 },
   { name: "EndTest Pro Psychology", mark: "endtest-pro", href: "https://www.endtestpro.com/", width: 263, height: 179 },
+  { name: "Fabworks", mark: "fabworks", href: "https://www.fabworks.com/", width: 1000, height: 158 },
 ];
 
 export default function Sponsors() {
