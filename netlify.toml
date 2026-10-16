@@ -43,11 +43,6 @@
   status = 301
 
 [[redirects]]
-  from = "/sponsors"
-  to = "/#join"
-  status = 301
-
-[[redirects]]
   from = "/blog"
   to = "/#media"
   status = 301

@@ -11,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://www.team1515.com/sponsors",
+      lastModified: new Date("2026-10-16"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.team1515.com/leadership",
       lastModified: new Date("2026-08-19"),
       changeFrequency: "monthly",

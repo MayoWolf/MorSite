@@ -635,6 +635,16 @@ export function MorTorqSite() {
             <span>Beverly Hills Education Foundation</span>
             <span>Beverly Hills High School</span>
           </div>
+          <Link
+            className="text-link partners-link"
+            href="/sponsors"
+            data-analytics-action="navigation"
+            data-analytics-label="meet_our_sponsors"
+            data-analytics-location="partners"
+          >
+            Meet our current sponsors
+            <ArrowRight aria-hidden="true" size={18} />
+          </Link>
         </section>
 
         <section

@@ -20,10 +20,11 @@ const navItems = [
   { label: "Impact", href: "/#impact" },
   { label: "Media", href: "/#media" },
   { label: "Leadership", href: "/leadership" },
+  { label: "Sponsors", href: "/sponsors" },
 ] as const;
 
 type SiteHeaderProps = {
-  activePage?: "home" | "leadership";
+  activePage?: "home" | "leadership" | "sponsors";
 };
 
 export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
@@ -58,7 +59,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
           {navItems.map((item) => (
             <Link
               aria-current={
-                activePage === "leadership" && item.href === "/leadership"
+                item.href === `/${activePage}`
                   ? "page"
                   : undefined
               }
@@ -108,7 +109,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
           {navItems.map((item) => (
             <Link
               aria-current={
-                activePage === "leadership" && item.href === "/leadership"
+                item.href === `/${activePage}`
                   ? "page"
                   : undefined
               }
