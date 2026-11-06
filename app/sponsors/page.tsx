@@ -31,8 +31,8 @@ export default function Sponsors() {
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteHeader activePage="sponsors" />
       <main id="main">
-        <section className="sponsors-hero" aria-labelledby="sponsors-title" data-analytics-section="sponsors_hero">
-          <div className="sponsors-hero-inner">
+        <section className="interior-hero" aria-labelledby="sponsors-title" data-analytics-section="sponsors_hero">
+          <div className="interior-hero-inner">
             <p className="eyebrow">Our sponsors · FRC Team 1515</p>
             <h1 id="sponsors-title">Built together.<br /><span>Powered by you.</span></h1>
             <p>Behind every robot is a community that believes in its builders. Thank you to the sponsors helping MorTorq turn student ideas into real-world experience.</p>

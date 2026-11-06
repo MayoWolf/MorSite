@@ -17,6 +17,7 @@ import { useState } from "react";
 const navItems = [
   { label: "About", href: "/#about" },
   { label: "Season", href: "/#season" },
+  { label: "Competition", href: "/competition" },
   { label: "Impact", href: "/#impact" },
   { label: "Media", href: "/#media" },
   { label: "Leadership", href: "/leadership" },
@@ -24,7 +25,7 @@ const navItems = [
 ] as const;
 
 type SiteHeaderProps = {
-  activePage?: "home" | "leadership" | "sponsors";
+  activePage?: "home" | "competition" | "leadership" | "sponsors";
 };
 
 export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
