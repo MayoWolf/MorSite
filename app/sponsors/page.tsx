@@ -23,6 +23,7 @@ const sponsors = [
   { name: "Rubel + Hartley", mark: "rubel-hartley", href: "https://latopalmspringsrealestate.com/", width: 390, height: 193 },
   { name: "EndTest Pro Psychology", mark: "endtest-pro", href: "https://www.endtestpro.com/", width: 263, height: 179 },
   { name: "Fabworks", mark: "fabworks", href: "https://www.fabworks.com/", width: 1000, height: 158 },
+  { name: "RMFG", mark: "rmfg", href: "https://www.rmfg.com", width: 1337, height: 467, dark: true },
 ];
 
 export default function Sponsors() {
