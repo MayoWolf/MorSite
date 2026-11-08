@@ -20,7 +20,8 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 86px;
+  /* The header scrolls away, so section links only need a small visual gap. */
+  scroll-padding-top: 16px;
 }
 
 body {
@@ -970,7 +971,7 @@ button {
 .impact-photo img {
   height: 100%;
   object-fit: cover;
-  object-position: 38% center;
+  object-position: 25% center;
   transition: transform 0.7s ease;
   width: 100%;
 }
@@ -1294,13 +1295,11 @@ button {
 }
 
 .sponsor-logo {
-  align-items: center;
+  aspect-ratio: 1;
   background: #fff;
-  display: flex;
-  flex: 0 0 200px;
-  height: 200px;
-  justify-content: center;
-  padding: 24px;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
 }
 
 .sponsor-logo-dark {
@@ -1308,10 +1307,12 @@ button {
 }
 
 .sponsor-logo img {
-  height: auto;
-  max-height: 100%;
+  height: 100%;
+  inset: 0;
   object-fit: contain;
-  width: auto;
+  padding: clamp(24px, 3vw, 40px);
+  position: absolute;
+  width: 100%;
 }
 
 .sponsor-caption {
@@ -1358,7 +1359,7 @@ button {
 }
 
 .join-section {
-  align-items: end;
+  align-items: center;
   background: var(--orange);
   display: grid;
   gap: 60px;
@@ -1380,6 +1381,7 @@ button {
 }
 
 .join-copy,
+.join-aside,
 .join-actions {
   position: relative;
   z-index: 2;
@@ -1391,6 +1393,30 @@ button {
 
 .join-copy > p:last-child {
   max-width: 560px;
+}
+
+.join-aside {
+  display: grid;
+  gap: 20px;
+  justify-self: end;
+  max-width: 560px;
+  width: 100%;
+}
+
+.join-photo {
+  background: var(--ink-soft);
+  border: 1px solid rgba(12, 13, 15, 0.2);
+  overflow: hidden;
+}
+
+.join-photo img {
+  height: auto;
+  width: 100%;
+}
+
+.join-aside .join-actions {
+  justify-self: stretch;
+  width: 100%;
 }
 
 .join-actions {
@@ -1844,10 +1870,6 @@ button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  html {
-    scroll-padding-top: 72px;
-  }
-
   .header-inner {
     min-height: 72px;
     padding-left: max(20px, env(safe-area-inset-left));
@@ -2080,6 +2102,11 @@ button {
   .join-section {
     align-items: start;
     padding: 85px 22px;
+  }
+
+  .join-aside {
+    justify-self: stretch;
+    max-width: none;
   }
 
   .join-actions {

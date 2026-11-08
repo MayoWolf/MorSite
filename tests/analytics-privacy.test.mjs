@@ -8,8 +8,8 @@ import {
 test("fragment-link actions do not inherit private page query parameters", () => {
   const destination = new URL("#season", "https://www.team1515.com/?private_note=secret").href;
   assert.equal(stripUrlDetails(destination), "https://www.team1515.com/");
-  assert.equal(stripUrlDetails("mailto:1515mortorq@gmail.com?body=private#draft"),
-    "mailto:1515mortorq@gmail.com");
+  assert.equal(stripUrlDetails("mailto:contact@team1515.com?body=private#draft"),
+    "mailto:contact@team1515.com");
   assert.equal(stripUrlDetails("/leadership"), "/leadership");
 });
 

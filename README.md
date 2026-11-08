@@ -108,4 +108,13 @@ updating tooling and remove this note when a compatible upstream fix is availabl
 - BIOCORE artwork: official FIRST season brand resources
 
 Credits and direct source links are included on the site.
+
+Current feature images from the team Drive library:
+
+- Impact driver-station photo: [IMG_8935 2.JPG](https://drive.google.com/file/d/1DgHHJlCQqUQW-FUmvXib2e0Jh_W4v1MR/view)
+- Home support-section photo: [IMG_8836 2.JPG](https://drive.google.com/file/d/1ykJ1iBfhykkPY0RxlyPx2znWTjjYz060/view)
+- Sponsors support-section photo: [IMG_9106.JPG](https://drive.google.com/file/d/1ggltinpPpZZlyzsw0AovNnM9fiGTzhkP/view)
+
+Run `node scripts/generate-icons.mjs` to regenerate the rounded favicon and
+app icons from the original team mark.
 # MorSite

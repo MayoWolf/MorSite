@@ -53,10 +53,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=rounded", sizes: "any" },
+      { url: "/icon.png?v=rounded", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    apple: [{ url: "/apple-touch-icon.png?v=rounded", sizes: "180x180" }],
   },
   manifest: "/site.webmanifest",
   openGraph: {
@@ -104,7 +105,7 @@ const organizationSchema = {
   url: "https://www.team1515.com",
   logo: "https://www.team1515.com/icon.png",
   foundingDate: "2005",
-  email: "1515mortorq@gmail.com",
+  email: "contact@team1515.com",
   parentOrganization: {
     "@type": "HighSchool",
     name: "Beverly Hills High School",

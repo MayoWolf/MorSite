@@ -469,13 +469,13 @@ export function MorTorqSite() {
         >
           <div className="impact-photo">
             <Image
-              src="/images/celebration-2026.webp"
-              alt="MorTorq students gathered with the competition crowd during the 2026 season"
+              src="/images/impact-drive-team-2026.webp"
+              alt="MorTorq students working together at the driver station during the 2026 season"
               fill
               sizes="(max-width: 860px) 100vw, 55vw"
               loading="lazy"
             />
-            <span>2026 competition season · MorTorq media</span>
+            <span>Working together · MorTorq 2026</span>
           </div>
           <div className="impact-copy">
             <div className="section-kicker section-kicker-light">
@@ -653,7 +653,6 @@ export function MorTorqSite() {
           id="join"
           data-analytics-section="join"
         >
-          <div className="join-noise" aria-hidden="true" />
           <div className="join-copy">
             <p className="eyebrow">Help power the next generation</p>
             <h2>
@@ -667,39 +666,51 @@ export function MorTorqSite() {
               experience as a mentor.
             </p>
           </div>
-          <div className="join-actions">
-            <a
-              className="button button-dark"
-              href="https://www.zeffy.com/donation-form/robotics-program"
-              target="_blank"
-              rel="noreferrer"
-              data-analytics-action="sponsor_interest"
-              data-analytics-label="sponsor_mortorq"
-              data-analytics-location="join"
-            >
-              Sponsor the team
-              <ExternalLink aria-hidden="true" size={17} />
-            </a>
-            <Link
-              className="button button-outline-dark"
-              href="/leadership"
-              data-analytics-action="meet_leadership"
-              data-analytics-label="meet_the_leads"
-              data-analytics-location="join"
-            >
-              Meet the leads
-              <ArrowRight aria-hidden="true" size={18} />
-            </Link>
-            <a
-              className="button button-outline-dark"
-              href="mailto:1515mortorq@gmail.com?subject=I%27d%20like%20to%20join%20MorTorq"
-              data-analytics-action="join_interest"
-              data-analytics-label="join_or_mentor"
-              data-analytics-location="join"
-            >
-              <Mail aria-hidden="true" size={18} />
-              Join or mentor
-            </a>
+          <div className="join-aside">
+            <div className="join-photo">
+              <Image
+                src="/images/team-support-2026.webp"
+                alt="MorTorq students and supporters cheering for robot 1515 at the competition field"
+                width={1600}
+                height={900}
+                sizes="(max-width: 860px) calc(100vw - 44px), (max-width: 1200px) 43vw, 560px"
+                loading="lazy"
+              />
+            </div>
+            <div className="join-actions">
+              <a
+                className="button button-dark"
+                href="https://www.zeffy.com/donation-form/robotics-program"
+                target="_blank"
+                rel="noreferrer"
+                data-analytics-action="sponsor_interest"
+                data-analytics-label="sponsor_mortorq"
+                data-analytics-location="join"
+              >
+                Sponsor the team
+                <ExternalLink aria-hidden="true" size={17} />
+              </a>
+              <Link
+                className="button button-outline-dark"
+                href="/leadership"
+                data-analytics-action="meet_leadership"
+                data-analytics-label="meet_the_leads"
+                data-analytics-location="join"
+              >
+                Meet the leads
+                <ArrowRight aria-hidden="true" size={18} />
+              </Link>
+              <a
+                className="button button-outline-dark"
+                href="mailto:contact@team1515.com?subject=I%27d%20like%20to%20join%20MorTorq"
+                data-analytics-action="join_interest"
+                data-analytics-label="join_or_mentor"
+                data-analytics-location="join"
+              >
+                <Mail aria-hidden="true" size={18} />
+                Join or mentor
+              </a>
+            </div>
           </div>
         </section>
       </main>

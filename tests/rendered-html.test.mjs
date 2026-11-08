@@ -12,12 +12,12 @@ test("exports a complete Netlify-ready site", async () => {
   assert.match(html, /BIOCORE/);
   assert.match(html, /Back in the finals/);
   assert.match(html, /mortorq-2026-recap\.mp4/);
-  assert.match(html, /gathered with the competition crowd/);
+  assert.match(html, /impact-drive-team-2026\.webp/);
   assert.match(html, /href="\/leadership"[^>]*>[^<]*Meet the leads/);
   assert.match(html, /data-analytics-section="home_hero"/);
   assert.match(html, /data-analytics-action="sponsor_interest"/);
   assert.match(html, /data-analytics-video="2026_finals_recap"/);
-  assert.match(html, /1515mortorq@gmail\.com/);
+  assert.match(html, /contact@team1515\.com/);
   assert.match(html, /application\/ld\+json/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/);
 });
@@ -71,7 +71,10 @@ test("ships core icons, manifest, media, and Netlify config", async () => {
     access(new URL("public/site.webmanifest", projectRoot)),
     access(new URL("public/images/team-2026.webp", projectRoot)),
     access(new URL("public/images/hero-2026.webp", projectRoot)),
-    access(new URL("public/images/celebration-2026.webp", projectRoot)),
+    access(new URL("public/images/impact-drive-team-2026.webp", projectRoot)),
+    access(new URL("public/images/team-support-2026.webp", projectRoot)),
+    access(new URL("public/images/sponsor-robot-2026.webp", projectRoot)),
+    access(new URL("public/favicon.svg", projectRoot)),
     access(new URL("public/images/team-2023.webp", projectRoot)),
     access(new URL("public/images/field-action-2026.webp", projectRoot)),
     access(new URL("public/images/biocore-2027.webp", projectRoot)),

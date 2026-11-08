@@ -39,7 +39,7 @@ export default function Sponsors() {
             <h1 id="sponsors-title">Built together.<br /><span>Powered by you.</span></h1>
             <p>Behind every robot is a community that believes in its builders. Thank you to the sponsors and partners helping MorTorq turn student ideas into real-world experience.</p>
             <div className="sponsors-hero-actions">
-              <a className="button button-primary" href="mailto:1515mortorq@gmail.com?subject=I%27d%20like%20to%20sponsor%20MorTorq" data-analytics-action="sponsor_interest" data-analytics-label="become_a_sponsor" data-analytics-location="sponsors_hero">Become a sponsor<ArrowRight aria-hidden="true" size={18} /></a>
+              <a className="button button-primary" href="mailto:contact@team1515.com?subject=I%27d%20like%20to%20sponsor%20MorTorq" data-analytics-action="sponsor_interest" data-analytics-label="become_a_sponsor" data-analytics-location="sponsors_hero">Become a sponsor<ArrowRight aria-hidden="true" size={18} /></a>
               <a className="text-link text-link-light" href="#current-sponsors">Meet our sponsors <ArrowRight aria-hidden="true" size={18} /></a>
             </div>
           </div>
@@ -80,8 +80,36 @@ export default function Sponsors() {
           </section>
         ))}
         <section className="join-section" aria-labelledby="sponsor-join-title" data-analytics-section="sponsor_join">
-          <div className="join-copy"><p className="eyebrow">Build the next chapter with us</p><h2 id="sponsor-join-title">Support the<br />next generation.</h2><p>Help our students design, build, and compete. Get in touch to learn about sponsoring MorTorq.</p></div>
-          <div className="join-actions"><a className="button button-dark" href="mailto:1515mortorq@gmail.com?subject=I%27d%20like%20to%20sponsor%20MorTorq" data-analytics-action="sponsor_interest" data-analytics-label="become_a_sponsor" data-analytics-location="sponsors"><Mail aria-hidden="true" size={18} />Become a sponsor<ArrowRight aria-hidden="true" size={18} /></a></div>
+          <div className="join-copy">
+            <p className="eyebrow">Build the next chapter with us</p>
+            <h2 id="sponsor-join-title">Support the<br />next generation.</h2>
+            <p>Help our students design, build, and compete. Get in touch to learn about sponsoring MorTorq.</p>
+          </div>
+          <div className="join-aside">
+            <div className="join-photo">
+              <Image
+                src="/images/sponsor-robot-2026.webp"
+                alt="A close look at robot 1515's mechanisms, wheels, and wiring"
+                width={1600}
+                height={1200}
+                sizes="(max-width: 860px) calc(100vw - 44px), (max-width: 1200px) 43vw, 560px"
+                loading="lazy"
+              />
+            </div>
+            <div className="join-actions">
+              <a
+                className="button button-dark"
+                href="mailto:contact@team1515.com?subject=I%27d%20like%20to%20sponsor%20MorTorq"
+                data-analytics-action="sponsor_interest"
+                data-analytics-label="become_a_sponsor"
+                data-analytics-location="sponsors"
+              >
+                <Mail aria-hidden="true" size={18} />
+                Become a sponsor
+                <ArrowRight aria-hidden="true" size={18} />
+              </a>
+            </div>
+          </div>
         </section>
       </main>
       <SiteFooter />

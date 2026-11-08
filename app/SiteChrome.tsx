@@ -12,7 +12,20 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { type AnchorHTMLAttributes, useState } from "react";
+
+type NavigationLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+  href: string;
+};
+
+function NavigationLink({ href, children, ...props }: NavigationLinkProps) {
+  // Native anchors also reposition correctly when the same section is clicked again.
+  if (href.includes("#")) {
+    return <a href={href} {...props}>{children}</a>;
+  }
+
+  return <Link href={href} {...props}>{children}</Link>;
+}
 
 const navItems = [
   { label: "About", href: "/#about" },
@@ -58,7 +71,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
 
         <nav className="desktop-nav" aria-label="Main navigation">
           {navItems.map((item) => (
-            <Link
+            <NavigationLink
               aria-current={
                 item.href === `/${activePage}`
                   ? "page"
@@ -71,7 +84,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
               data-analytics-location="desktop_header"
             >
               {item.label}
-            </Link>
+            </NavigationLink>
           ))}
         </nav>
 
@@ -119,7 +132,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
             <ArrowRight aria-hidden="true" size={18} />
           </Link>
           {navItems.map((item) => (
-            <Link
+            <NavigationLink
               aria-current={
                 item.href === `/${activePage}`
                   ? "page"
@@ -134,7 +147,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
             >
               {item.label}
               <ChevronRight aria-hidden="true" size={18} />
-            </Link>
+            </NavigationLink>
           ))}
         </nav>
       )}
@@ -177,7 +190,7 @@ export function SiteFooter() {
         <div className="footer-column">
           <h3>Navigate</h3>
           {navItems.map((item) => (
-            <Link
+            <NavigationLink
               key={item.label}
               href={item.href}
               data-analytics-action="navigation"
@@ -185,28 +198,28 @@ export function SiteFooter() {
               data-analytics-location="footer"
             >
               {item.label}
-            </Link>
+            </NavigationLink>
           ))}
-          <Link
+          <NavigationLink
             href="/#join"
             data-analytics-action="join_interest"
             data-analytics-label="join_us"
             data-analytics-location="footer"
           >
             Join us
-          </Link>
+          </NavigationLink>
         </div>
 
         <div className="footer-column footer-contact">
           <h3>Connect</h3>
           <a
-            href="mailto:1515mortorq@gmail.com"
+            href="mailto:contact@team1515.com"
             data-analytics-action="contact"
             data-analytics-label="email"
             data-analytics-location="footer"
           >
             <Mail aria-hidden="true" size={16} />
-            1515mortorq@gmail.com
+            contact@team1515.com
           </a>
           <a
             href="https://maps.google.com/?q=Beverly+Hills+High+School+241+S+Moreno+Dr+Beverly+Hills+CA+90212"
