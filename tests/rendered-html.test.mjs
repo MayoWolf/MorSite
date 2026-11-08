@@ -4,6 +4,15 @@ import test from "node:test";
 
 const projectRoot = new URL("../", import.meta.url);
 
+test("competition venue links use Apple Maps", async () => {
+  const html = await readFile(new URL("../out/competition.html", import.meta.url), "utf8");
+  const venueLinks = [...html.matchAll(/href="(https:\/\/maps\.apple\.com\/\?q=[^"]+)"/g)];
+  assert.equal(venueLinks.length, 2);
+  assert.match(decodeURIComponent(venueLinks[0][1]), /Eastside High School, 3200 E Ave J 8, Lancaster, CA/);
+  assert.match(decodeURIComponent(venueLinks[1][1]), /Don Bosco Technical Institute, 1151 San Gabriel Blvd, Rosemead, CA/);
+  assert.doesNotMatch(html, /www\.google\.com\/maps\/search/);
+});
+
 test("exports a complete Netlify-ready site", async () => {
   const html = await readFile(new URL("../out/index.html", import.meta.url), "utf8");
 

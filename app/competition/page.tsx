@@ -72,7 +72,7 @@ export default function Competition() {
                   <div className={styles.detail}>
                     <MapPin size={20} aria-hidden="true" />
                     <p>
-                      <a className="text-link" href={`https://www.google.com/maps/search/?api=1&query=${location}`}>
+                      <a className="text-link" href={`https://maps.apple.com/?q=${location}`}>
                         {venue} <ExternalLink size={14} aria-hidden="true" />
                       </a>
                       <br />{street}<br />{city}
