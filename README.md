@@ -111,7 +111,7 @@ Credits and direct source links are included on the site.
 
 Current feature images from the team Drive library:
 
-- Impact photo: team-supplied 2026 competition celebration (`celebration-2026.webp`).
+- Impact photo: [IMG_8565 2.JPG](https://drive.google.com/file/d/1xIAN9PjfYZ5f7h7QteaOjraaDPJcM2wb/view), the team-selected 2026 driver-station photo (`impact-team-selected-2026.webp`).
 - Home support-section photo: [IMG_8836 2.JPG](https://drive.google.com/file/d/1ykJ1iBfhykkPY0RxlyPx2znWTjjYz060/view)
 - Sponsors support-section photo: [54D38C8F-F0F1-482A-B9B4-FCFF27F3A3F2.JPG](https://drive.google.com/file/d/1jo4_684XM9qCiYvhw23MKZTR4BfK2aa6/view)
 

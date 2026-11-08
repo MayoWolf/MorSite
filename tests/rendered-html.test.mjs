@@ -12,7 +12,11 @@ test("exports a complete Netlify-ready site", async () => {
   assert.match(html, /BIOCORE/);
   assert.match(html, /Back in the finals/);
   assert.match(html, /mortorq-2026-recap\.mp4/);
-  assert.match(html, /celebration-2026\.webp/);
+  assert.match(html, /impact-team-selected-2026\.webp/);
+  const featuredSponsors = html.match(/aria-label="Featured sponsors">([\s\S]*?)<\/div>/)?.[1];
+  assert.ok(featuredSponsors);
+  assert.equal((featuredSponsors.match(/<span>/g) || []).length, 4);
+  assert.doesNotMatch(featuredSponsors, /Fabworks|RMFG/);
   assert.doesNotMatch(html, /class="result-number"/);
   assert.match(html, /href="\/leadership"[^>]*>[^<]*Meet the leads/);
   assert.match(html, /data-analytics-section="home_hero"/);

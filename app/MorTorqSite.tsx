@@ -468,8 +468,8 @@ export function MorTorqSite() {
         >
           <div className="impact-photo">
             <Image
-              src="/images/celebration-2026.webp"
-              alt="MorTorq teammates cheering together in the stands at a 2026 competition"
+              src="/images/impact-team-selected-2026.webp"
+              alt="MorTorq students and a mentor smiling together at the competition driver station"
               fill
               sizes="(max-width: 860px) 100vw, 55vw"
               loading="lazy"
@@ -629,13 +629,11 @@ export function MorTorqSite() {
           data-analytics-section="partners"
         >
           <p className="eyebrow">Powered by our sponsors & partners</p>
-          <div className="partner-list" aria-label="Current sponsors and partners">
+          <div className="partner-list" aria-label="Featured sponsors">
             <span>Beverly Hills Education Foundation</span>
             <span>Gene Haas Foundation</span>
             <span>Ohana & Co</span>
             <span>Optimus Properties, LLC</span>
-            <span>Fabworks</span>
-            <span>RMFG</span>
           </div>
           <Link
             className="text-link partners-link"
