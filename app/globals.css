@@ -455,19 +455,6 @@ button {
   z-index: 3;
 }
 
-.result-number {
-  align-items: center;
-  background: var(--orange);
-  display: flex;
-  font-family: var(--display);
-  font-size: 1.55rem;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums lining-nums;
-  height: 58px;
-  justify-content: center;
-  width: 58px;
-}
-
 .hero-result div {
   display: flex;
   flex-direction: column;
@@ -971,7 +958,7 @@ button {
 .impact-photo img {
   height: 100%;
   object-fit: cover;
-  object-position: 25% center;
+  object-position: center;
   transition: transform 0.7s ease;
   width: 100%;
 }
@@ -1954,10 +1941,6 @@ button {
     min-width: 0;
   }
 
-  .result-number {
-    flex: 0 0 auto;
-  }
-
   .news-rail {
     align-items: flex-start;
     gap: 10px;
@@ -2434,12 +2417,6 @@ button {
     gap: 12px;
     left: 18px;
     max-width: calc(100% - 36px);
-  }
-
-  .result-number {
-    font-size: 1.35rem;
-    height: 52px;
-    width: 52px;
   }
 
   .hero-result small {

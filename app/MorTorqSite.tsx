@@ -186,7 +186,6 @@ export function MorTorqSite() {
           </div>
 
           <div className="hero-result">
-            <span className="result-number">02</span>
             <div>
               <small>2026 Aerospace Valley</small>
               <strong>District Event Finalist</strong>
@@ -469,13 +468,13 @@ export function MorTorqSite() {
         >
           <div className="impact-photo">
             <Image
-              src="/images/pit-crew.webp"
-              alt="MorTorq teammates gathered around their robot, celebrating together"
+              src="/images/celebration-2026.webp"
+              alt="MorTorq teammates cheering together in the stands at a 2026 competition"
               fill
               sizes="(max-width: 860px) 100vw, 55vw"
               loading="lazy"
             />
-            <span>More than a team · MorTorq archive</span>
+            <span>Stronger together · MorTorq 2026</span>
           </div>
           <div className="impact-copy">
             <div className="section-kicker section-kicker-light">

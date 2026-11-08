@@ -12,7 +12,8 @@ test("exports a complete Netlify-ready site", async () => {
   assert.match(html, /BIOCORE/);
   assert.match(html, /Back in the finals/);
   assert.match(html, /mortorq-2026-recap\.mp4/);
-  assert.match(html, /pit-crew\.webp/);
+  assert.match(html, /celebration-2026\.webp/);
+  assert.doesNotMatch(html, /class="result-number"/);
   assert.match(html, /href="\/leadership"[^>]*>[^<]*Meet the leads/);
   assert.match(html, /data-analytics-section="home_hero"/);
   assert.match(html, /data-analytics-action="sponsor_interest"/);
