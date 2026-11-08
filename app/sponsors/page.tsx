@@ -88,8 +88,8 @@ export default function Sponsors() {
           <div className="join-aside">
             <div className="join-photo">
               <Image
-                src="/images/sponsor-robot-2026.webp"
-                alt="A close look at robot 1515's mechanisms, wheels, and wiring"
+                src="/images/sponsor-team-2026.webp"
+                alt="MorTorq students sharing a moment together in the competition pit"
                 width={1600}
                 height={1200}
                 sizes="(max-width: 860px) calc(100vw - 44px), (max-width: 1200px) 43vw, 560px"

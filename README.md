@@ -111,9 +111,9 @@ Credits and direct source links are included on the site.
 
 Current feature images from the team Drive library:
 
-- Impact driver-station photo: [IMG_8935 2.JPG](https://drive.google.com/file/d/1DgHHJlCQqUQW-FUmvXib2e0Jh_W4v1MR/view)
+- Impact photo: MorTorq's existing team archive (`pit-crew.webp`).
 - Home support-section photo: [IMG_8836 2.JPG](https://drive.google.com/file/d/1ykJ1iBfhykkPY0RxlyPx2znWTjjYz060/view)
-- Sponsors support-section photo: [IMG_9106.JPG](https://drive.google.com/file/d/1ggltinpPpZZlyzsw0AovNnM9fiGTzhkP/view)
+- Sponsors support-section photo: [54D38C8F-F0F1-482A-B9B4-FCFF27F3A3F2.JPG](https://drive.google.com/file/d/1jo4_684XM9qCiYvhw23MKZTR4BfK2aa6/view)
 
 Run `node scripts/generate-icons.mjs` to regenerate the rounded favicon and
 app icons from the original team mark.

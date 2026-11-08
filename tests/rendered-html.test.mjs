@@ -12,7 +12,7 @@ test("exports a complete Netlify-ready site", async () => {
   assert.match(html, /BIOCORE/);
   assert.match(html, /Back in the finals/);
   assert.match(html, /mortorq-2026-recap\.mp4/);
-  assert.match(html, /impact-drive-team-2026\.webp/);
+  assert.match(html, /pit-crew\.webp/);
   assert.match(html, /href="\/leadership"[^>]*>[^<]*Meet the leads/);
   assert.match(html, /data-analytics-section="home_hero"/);
   assert.match(html, /data-analytics-action="sponsor_interest"/);
@@ -33,12 +33,11 @@ test("exports the leadership directory", async () => {
   assert.match(html, /Wolf Nazari/);
   assert.match(html, /Peter Shabani/);
   assert.match(html, /Sophie Hong/);
-  assert.match(html, /Isabel Lo/);
-  assert.match(html, /Arianna/);
+  assert.match(html, /Benjamin Ohana/);
+  assert.match(html, /Arianna Matcuk/);
   assert.match(html, /Henry Goldman/);
   assert.match(html, /Edward Titov/);
-  assert.match(html, /To be announced/);
-  assert.match(html, /Assistant Electrical Lead/);
+  assert.doesNotMatch(html, /To be announced|Assistant Electrical Lead|Isabel Lo/);
   assert.match(html, /Portrait coming soon/);
   assert.match(html, /data-analytics-section="leadership_hero"/);
   assert.match(html, /data-analytics-section="leadership_profile_wolf_nazari"/);
@@ -48,11 +47,10 @@ test("exports the leadership directory", async () => {
     "Wolf Nazari",
     "Sophie Hong",
     "Henry Goldman",
-    "Arianna",
+    "Arianna Matcuk",
     "Peter Shabani",
-    "Isabel Lo",
+    "Benjamin Ohana",
     "Edward Titov",
-    "To be announced",
   ];
   let previousIndex = -1;
 
@@ -73,7 +71,7 @@ test("ships core icons, manifest, media, and Netlify config", async () => {
     access(new URL("public/images/hero-2026.webp", projectRoot)),
     access(new URL("public/images/impact-drive-team-2026.webp", projectRoot)),
     access(new URL("public/images/team-support-2026.webp", projectRoot)),
-    access(new URL("public/images/sponsor-robot-2026.webp", projectRoot)),
+    access(new URL("public/images/sponsor-team-2026.webp", projectRoot)),
     access(new URL("public/favicon.svg", projectRoot)),
     access(new URL("public/images/team-2023.webp", projectRoot)),
     access(new URL("public/images/field-action-2026.webp", projectRoot)),

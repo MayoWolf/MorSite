@@ -21,7 +21,7 @@ const leaders = [
     bio: "Personal bio coming soon. This role guides robot software, controls, testing, and collaboration with the build team.",
   },
   {
-    name: "Arianna",
+    name: "Arianna Matcuk",
     role: "Electrical Lead",
     department: "Electrical",
     bio: "Personal bio coming soon. This role guides electrical layout, wiring, testing, and system reliability.",
@@ -33,7 +33,7 @@ const leaders = [
     bio: "Personal bio coming soon. This role supports team logistics, communication, and day-to-day coordination.",
   },
   {
-    name: "Isabel Lo",
+    name: "Benjamin Ohana",
     role: "Assistant Mechanical Lead",
     department: "Mechanical",
     bio: "Personal bio coming soon. This role supports mechanical planning and helps carry designs from prototype to competition-ready hardware.",
@@ -43,13 +43,6 @@ const leaders = [
     role: "Assistant Programming Lead",
     department: "Programming",
     bio: "Personal bio coming soon. This role supports software development, testing, documentation, and reliable robot behavior.",
-  },
-  {
-    name: "To be announced",
-    role: "Assistant Electrical Lead",
-    department: "Electrical",
-    bio: "This assistant role has not been filled yet. The profile will be added when MorTorq confirms the position.",
-    pending: true,
   },
 ] as const;
 
@@ -101,7 +94,7 @@ export function LeadershipPage() {
             </div>
             <p>
               Seven students guide MorTorq’s operations and technical
-              departments, with the assistant electrical position still open.
+              departments.
               Portraits and personal biographies will be added as the team
               completes its 2026–2027 profiles.
             </p>
@@ -110,7 +103,7 @@ export function LeadershipPage() {
           <div className="leadership-grid">
             {leaders.map((leader, index) => (
               <article
-                className={`leader-card ${"pending" in leader ? "leader-card-pending" : ""}`}
+                className="leader-card"
                 key={`${leader.department}-${leader.role}`}
                 data-analytics-section={`leadership_profile_${leader.name.toLowerCase().replaceAll(" ", "_")}`}
               >
@@ -126,9 +119,7 @@ export function LeadershipPage() {
                     sizes="(max-width: 560px) 70vw, (max-width: 860px) 38vw, 20vw"
                   />
                   <span className="leader-placeholder">
-                    {"pending" in leader
-                      ? "Profile to be confirmed"
-                      : "Portrait coming soon"}
+                    Portrait coming soon
                   </span>
                 </div>
                 <div className="leader-copy">

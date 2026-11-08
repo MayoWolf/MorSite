@@ -469,13 +469,13 @@ export function MorTorqSite() {
         >
           <div className="impact-photo">
             <Image
-              src="/images/impact-drive-team-2026.webp"
-              alt="MorTorq students working together at the driver station during the 2026 season"
+              src="/images/pit-crew.webp"
+              alt="MorTorq teammates gathered around their robot, celebrating together"
               fill
               sizes="(max-width: 860px) 100vw, 55vw"
               loading="lazy"
             />
-            <span>Working together · MorTorq 2026</span>
+            <span>More than a team · MorTorq archive</span>
           </div>
           <div className="impact-copy">
             <div className="section-kicker section-kicker-light">
@@ -629,12 +629,14 @@ export function MorTorqSite() {
           className="partners-section"
           data-analytics-section="partners"
         >
-          <p className="eyebrow">Powered by our partners</p>
-          <div className="partner-list" aria-label="Team sponsors">
-            <span>Enterprise</span>
-            <span>BHHS Career Technical Education</span>
+          <p className="eyebrow">Powered by our sponsors & partners</p>
+          <div className="partner-list" aria-label="Current sponsors and partners">
             <span>Beverly Hills Education Foundation</span>
-            <span>Beverly Hills High School</span>
+            <span>Gene Haas Foundation</span>
+            <span>Ohana & Co</span>
+            <span>Optimus Properties, LLC</span>
+            <span>Fabworks</span>
+            <span>RMFG</span>
           </div>
           <Link
             className="text-link partners-link"

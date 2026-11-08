@@ -1180,7 +1180,7 @@ button {
   align-items: center;
   display: grid;
   gap: 40px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .partner-list span {
@@ -1295,7 +1295,7 @@ button {
 }
 
 .sponsor-logo {
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   background: #fff;
   flex: 0 0 auto;
   position: relative;
@@ -2408,10 +2408,6 @@ button {
 
   .leader-card:nth-child(7) {
     order: 6;
-  }
-
-  .leader-card:nth-child(8) {
-    order: 8;
   }
 
   .leader-photo img {
