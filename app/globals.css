@@ -85,6 +85,9 @@ button {
 }
 
 .site-header {
+  background: rgba(64, 64, 64, 0.5);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   position: absolute;
   inset: 0 0 auto;
   z-index: 50;
@@ -95,6 +98,7 @@ button {
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   display: grid;
+  column-gap: 24px;
   grid-template-columns: auto 1fr auto;
   margin: 0 auto;
   max-width: 1480px;
@@ -213,6 +217,14 @@ button {
 
 .mobile-nav a[aria-current="page"] {
   color: var(--orange);
+}
+
+.mobile-nav .mobile-sponsor-cta {
+  border: 0;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  margin: 8px 0;
+  padding: 0 16px;
 }
 
 .button {
@@ -514,7 +526,7 @@ button {
 .section {
   margin: 0 auto;
   max-width: 1480px;
-  padding: 125px 32px;
+  padding: 96px 32px;
 }
 
 .section-kicker {
@@ -1156,7 +1168,7 @@ button {
   border-top: 1px solid var(--line);
   margin: 0 auto;
   max-width: 1480px;
-  padding: 70px 32px 110px;
+  padding: 64px 32px 72px;
 }
 
 .partners-section .eyebrow {
@@ -1224,9 +1236,24 @@ button {
 .sponsors-heading {
   align-items: end;
   display: grid;
-  gap: 40px;
+  gap: 32px;
   grid-template-columns: 1.2fr 0.8fr;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
+}
+
+.sponsors-hero-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.section.sponsors-directory {
+  padding-block: clamp(48px, 6vw, 80px);
+}
+
+.sponsors-directory + .sponsors-directory {
+  padding-top: 0;
 }
 
 .sponsors-heading .eyebrow {
@@ -1249,7 +1276,11 @@ button {
 .sponsors-grid {
   display: grid;
   gap: 28px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.partners-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .sponsor-card {
@@ -1269,9 +1300,9 @@ button {
   align-items: center;
   background: #fff;
   display: flex;
-  height: 250px;
+  height: 200px;
   justify-content: center;
-  padding: 32px;
+  padding: 24px;
 }
 
 .sponsor-logo-dark {
@@ -1520,7 +1551,7 @@ button {
 }
 
 .leadership-directory {
-  padding-bottom: 145px;
+  padding-bottom: 96px;
 }
 
 .leadership-intro {
@@ -1528,7 +1559,7 @@ button {
   display: grid;
   gap: 8%;
   grid-template-columns: 1.15fr 0.85fr;
-  margin-bottom: 82px;
+  margin-bottom: 48px;
 }
 
 .leadership-intro .section-kicker {
@@ -1813,9 +1844,7 @@ button {
   .leadership-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
 
-@media (max-width: 860px) {
   html {
     scroll-padding-top: 72px;
   }
@@ -1847,7 +1876,9 @@ button {
     padding-left: max(24px, env(safe-area-inset-left));
     padding-right: max(24px, env(safe-area-inset-right));
   }
+}
 
+@media (max-width: 860px) {
   .hero {
     min-height: 820px;
   }

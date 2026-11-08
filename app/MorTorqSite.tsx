@@ -118,8 +118,9 @@ export function MorTorqSite() {
     [selectedImage],
   );
 
+  // One page root gives the router a single scroll target instead of the footer.
   return (
-    <>
+    <div className="site-page">
       <a className="skip-link" href="#main">
         Skip to content
       </a>
@@ -654,20 +655,33 @@ export function MorTorqSite() {
         >
           <div className="join-noise" aria-hidden="true" />
           <div className="join-copy">
-            <p className="eyebrow">There’s a place for you here</p>
+            <p className="eyebrow">Help power the next generation</p>
             <h2>
               Help build
               <br />
               the next chapter.
             </h2>
             <p>
-              Join the team, mentor a student, or help fund the parts, tools,
-              travel, and opportunities that make every season possible.
+              Sponsor the parts, tools, travel, and opportunities that make
+              every season possible. You can also join the team or share your
+              experience as a mentor.
             </p>
           </div>
           <div className="join-actions">
-            <Link
+            <a
               className="button button-dark"
+              href="https://www.zeffy.com/donation-form/robotics-program"
+              target="_blank"
+              rel="noreferrer"
+              data-analytics-action="sponsor_interest"
+              data-analytics-label="sponsor_mortorq"
+              data-analytics-location="join"
+            >
+              Sponsor the team
+              <ExternalLink aria-hidden="true" size={17} />
+            </a>
+            <Link
+              className="button button-outline-dark"
               href="/leadership"
               data-analytics-action="meet_leadership"
               data-analytics-label="meet_the_leads"
@@ -685,18 +699,6 @@ export function MorTorqSite() {
             >
               <Mail aria-hidden="true" size={18} />
               Join or mentor
-            </a>
-            <a
-              className="button button-outline-dark"
-              href="https://www.zeffy.com/donation-form/robotics-program"
-              target="_blank"
-              rel="noreferrer"
-              data-analytics-action="sponsor_interest"
-              data-analytics-label="sponsor_mortorq"
-              data-analytics-location="join"
-            >
-              Sponsor MorTorq
-              <ExternalLink aria-hidden="true" size={17} />
             </a>
           </div>
         </section>
@@ -751,6 +753,6 @@ export function MorTorqSite() {
           </figure>
         </div>
       )}
-    </>
+    </div>
   );
 }

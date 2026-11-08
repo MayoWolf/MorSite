@@ -42,7 +42,7 @@ const events = [
 
 export default function Competition() {
   return (
-    <>
+    <div className="site-page">
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteHeader activePage="competition" />
       <main id="main">
@@ -101,6 +101,6 @@ export default function Competition() {
         </section>
       </main>
       <SiteFooter />
-    </>
+    </div>
   );
 }

@@ -77,12 +77,12 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
 
         <Link
           className="button button-small button-light header-cta"
-          href="/#join"
-          data-analytics-action="join_interest"
-          data-analytics-label="join_the_team"
+          href="/sponsors"
+          data-analytics-action="sponsor_interest"
+          data-analytics-label="sponsor_the_team"
           data-analytics-location="desktop_header"
         >
-          Join the team
+          Sponsor the team
           <ArrowRight aria-hidden="true" size={16} />
         </Link>
 
@@ -107,6 +107,17 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
           id="mobile-navigation"
           aria-label="Mobile navigation"
         >
+          <Link
+            className="button button-light mobile-sponsor-cta"
+            href="/sponsors"
+            data-analytics-action="sponsor_interest"
+            data-analytics-label="sponsor_the_team"
+            data-analytics-location="mobile_menu"
+            onClick={() => setMenuOpen(false)}
+          >
+            Sponsor the team
+            <ArrowRight aria-hidden="true" size={18} />
+          </Link>
           {navItems.map((item) => (
             <Link
               aria-current={
@@ -125,16 +136,6 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
               <ChevronRight aria-hidden="true" size={18} />
             </Link>
           ))}
-          <Link
-            href="/#join"
-            data-analytics-action="join_interest"
-            data-analytics-label="join_or_sponsor"
-            data-analytics-location="mobile_menu"
-            onClick={() => setMenuOpen(false)}
-          >
-            Join or sponsor us
-            <ChevronRight aria-hidden="true" size={18} />
-          </Link>
         </nav>
       )}
     </header>

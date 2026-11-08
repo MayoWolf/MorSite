@@ -132,7 +132,7 @@ export default function RootLayout({
   const fontVariables = `${displayFont.variable} ${bodyFont.variable} ${monoFont.variable}`;
 
   return (
-    <html className={fontVariables} lang="en">
+    <html className={fontVariables} lang="en" data-scroll-behavior="smooth">
       <body>
         {children}
         <SiteAnalytics />

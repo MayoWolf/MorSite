@@ -29,7 +29,7 @@ const partners = [
 
 export default function Sponsors() {
   return (
-    <>
+    <div className="site-page">
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteHeader activePage="sponsors" />
       <main id="main">
@@ -38,7 +38,10 @@ export default function Sponsors() {
             <p className="eyebrow">Sponsors & partners · FRC Team 1515</p>
             <h1 id="sponsors-title">Built together.<br /><span>Powered by you.</span></h1>
             <p>Behind every robot is a community that believes in its builders. Thank you to the sponsors and partners helping MorTorq turn student ideas into real-world experience.</p>
-            <a className="text-link" href="#current-sponsors">Meet our sponsors <ArrowRight aria-hidden="true" size={18} /></a>
+            <div className="sponsors-hero-actions">
+              <a className="button button-primary" href="mailto:1515mortorq@gmail.com?subject=I%27d%20like%20to%20sponsor%20MorTorq" data-analytics-action="sponsor_interest" data-analytics-label="become_a_sponsor" data-analytics-location="sponsors_hero">Become a sponsor<ArrowRight aria-hidden="true" size={18} /></a>
+              <a className="text-link text-link-light" href="#current-sponsors">Meet our sponsors <ArrowRight aria-hidden="true" size={18} /></a>
+            </div>
           </div>
         </section>
         {[
@@ -64,7 +67,7 @@ export default function Sponsors() {
               <div><p className="eyebrow">{group.eyebrow}</p><h2 id={`${group.id}-title`}>{group.title}</h2></div>
               <p>{group.description}</p>
             </div>
-            <div className="sponsors-grid">
+            <div className={`sponsors-grid${group.id === "current-partners" ? " partners-grid" : ""}`}>
               {group.organizations.map((sponsor) => (
                 <a key={sponsor.mark} className="sponsor-card" href={sponsor.href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${sponsor.name} (opens in a new tab)`} data-analytics-action="outbound_link" data-analytics-label={sponsor.mark} data-analytics-location={group.analytics}>
                   <div className={`sponsor-logo${"dark" in sponsor && sponsor.dark ? " sponsor-logo-dark" : ""}`}>
@@ -82,6 +85,6 @@ export default function Sponsors() {
         </section>
       </main>
       <SiteFooter />
-    </>
+    </div>
   );
 }

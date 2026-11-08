@@ -55,7 +55,7 @@ const leaders = [
 
 export function LeadershipPage() {
   return (
-    <>
+    <div className="site-page">
       <a className="skip-link" href="#main">
         Skip to content
       </a>
@@ -144,6 +144,6 @@ export function LeadershipPage() {
       </main>
 
       <SiteFooter />
-    </>
+    </div>
   );
 }
