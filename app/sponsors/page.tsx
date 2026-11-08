@@ -67,7 +67,7 @@ export default function Sponsors() {
               <div><p className="eyebrow">{group.eyebrow}</p><h2 id={`${group.id}-title`}>{group.title}</h2></div>
               <p>{group.description}</p>
             </div>
-            <div className={`sponsors-grid${group.id === "current-partners" ? " partners-grid" : ""}`}>
+            <div className="sponsors-grid">
               {group.organizations.map((sponsor) => (
                 <a key={sponsor.mark} className="sponsor-card" href={sponsor.href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${sponsor.name} (opens in a new tab)`} data-analytics-action="outbound_link" data-analytics-label={sponsor.mark} data-analytics-location={group.analytics}>
                   <div className={`sponsor-logo${"dark" in sponsor && sponsor.dark ? " sponsor-logo-dark" : ""}`}>
