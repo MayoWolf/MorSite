@@ -4,6 +4,18 @@ import test from "node:test";
 
 const projectRoot = new URL("../", import.meta.url);
 
+test("every external website link opens safely in a new tab", async () => {
+  for (const page of ["index", "competition", "leadership", "sponsors"]) {
+    const html = await readFile(new URL(`../out/${page}.html`, import.meta.url), "utf8");
+    const externalLinks = [...html.matchAll(/<a\b[^>]*\bhref="https?:\/\/[^>]*>/g)];
+    assert.ok(externalLinks.length > 0, page);
+    for (const [link] of externalLinks) {
+      assert.match(link, /\btarget="_blank"/, `${page}: ${link}`);
+      assert.match(link, /\brel="[^"]*\b(?:noopener|noreferrer)\b/, `${page}: ${link}`);
+    }
+  }
+});
+
 test("site copy has no em dashes or team recruitment invitations", async () => {
   for (const page of ["index", "competition", "leadership", "sponsors", "404"]) {
     const html = await readFile(new URL(`../out/${page}.html`, import.meta.url), "utf8");

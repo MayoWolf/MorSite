@@ -72,7 +72,7 @@ export default function Competition() {
                   <div className={styles.detail}>
                     <MapPin size={20} aria-hidden="true" />
                     <p>
-                      <a className="text-link" href={`https://maps.apple.com/?q=${location}`}>
+                      <a className="text-link" href={`https://maps.apple.com/?q=${location}`} target="_blank" rel="noopener noreferrer">
                         {venue} <ExternalLink size={14} aria-hidden="true" />
                       </a>
                       <br />{street}<br />{city}
@@ -82,6 +82,8 @@ export default function Competition() {
                     <a
                       className="button button-small button-dark"
                       href={`https://frc-events.firstinspires.org/2027/${code}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label={`FIRST event details for ${name}`}
                     >
                       FIRST event details <ExternalLink size={15} aria-hidden="true" />
@@ -89,6 +91,8 @@ export default function Competition() {
                     <a
                       className="button button-small button-outline-dark"
                       href={`https://www.thebluealliance.com/event/2027${code.toLowerCase()}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label={`${name} on The Blue Alliance`}
                     >
                       The Blue Alliance <ExternalLink size={15} aria-hidden="true" />
