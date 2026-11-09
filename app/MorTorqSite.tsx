@@ -154,7 +154,7 @@ export function MorTorqSite() {
               <span>what’s next.</span>
             </h1>
             <p className="hero-lede">
-              We are MorTorq—FRC Team 1515. Student-led, mentor-powered, and
+              We are MorTorq, FRC Team 1515. Student-led, mentor-powered, and
               fresh from our strongest finish in sixteen years.
             </p>
             <div className="hero-actions">
@@ -232,7 +232,7 @@ export function MorTorqSite() {
             <div className="intro-copy">
               <p className="large-copy">
                 MorTorq is where Beverly Hills High School students turn bold
-                ideas into competition-ready robots—and become engineers,
+                ideas into competition-ready robots and become engineers,
                 programmers, designers, leaders, and teammates along the way.
               </p>
               <p>
@@ -308,7 +308,7 @@ export function MorTorqSite() {
               <p className="season-description">
                 A new challenge is taking root. On January 9, 2027, FIRST
                 Robotics Competition teams will delve into the heart of what
-                sustains life on Earth. Until kickoff, the game stays secret—and
+                sustains life on Earth. Until kickoff, the game stays secret, and
                 our preparation does not.
               </p>
               <a
@@ -410,7 +410,7 @@ export function MorTorqSite() {
               <h3>The run that changed the season.</h3>
               <p>
                 The result marked MorTorq’s first appearance in an event final
-                in sixteen years—a breakthrough built one repair, one match,
+                in sixteen years, a breakthrough built one repair, one match,
                 and one decision at a time.
               </p>
               <div className="result-links">
@@ -514,12 +514,12 @@ export function MorTorqSite() {
             </ul>
             <a
               className="button button-outline-light"
-              href="#join"
-              data-analytics-action="join_interest"
-              data-analytics-label="get_involved"
+              href="mailto:contact@team1515.com?subject=I%27d%20like%20to%20mentor%20MorTorq"
+              data-analytics-action="mentor_interest"
+              data-analytics-label="become_a_mentor"
               data-analytics-location="impact"
             >
-              Get involved
+              Become a mentor
               <ArrowRight aria-hidden="true" size={17} />
             </a>
           </div>
@@ -661,8 +661,8 @@ export function MorTorqSite() {
             </h2>
             <p>
               Sponsor the parts, tools, travel, and opportunities that make
-              every season possible. You can also join the team or share your
-              experience as a mentor.
+              every season possible. Contact us to share your experience as
+              a mentor.
             </p>
           </div>
           <div className="join-aside">
@@ -701,13 +701,13 @@ export function MorTorqSite() {
               </Link>
               <a
                 className="button button-outline-dark"
-                href="mailto:contact@team1515.com?subject=I%27d%20like%20to%20join%20MorTorq"
-                data-analytics-action="join_interest"
-                data-analytics-label="join_or_mentor"
+                href="mailto:contact@team1515.com?subject=I%27d%20like%20to%20mentor%20MorTorq"
+                data-analytics-action="mentor_interest"
+                data-analytics-label="contact_about_mentorship"
                 data-analytics-location="join"
               >
                 <Mail aria-hidden="true" size={18} />
-                Join or mentor
+                Contact about mentorship
               </a>
             </div>
           </div>

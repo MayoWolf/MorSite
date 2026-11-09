@@ -1,4 +1,4 @@
-# MorTorq — FRC Team 1515
+# MorTorq | FRC Team 1515
 
 The 2026 website for Beverly Hills High School's FIRST Robotics Competition
 team. Built with React, TypeScript, and Next.js, then statically exported for

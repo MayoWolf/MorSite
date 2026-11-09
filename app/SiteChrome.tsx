@@ -182,7 +182,7 @@ export function SiteFooter() {
             </span>
           </Link>
           <p>
-            Building robots—and the people who build the future—at Beverly
+            Building robots and the people who build the future at Beverly
             Hills High School.
           </p>
         </div>
@@ -201,12 +201,12 @@ export function SiteFooter() {
             </NavigationLink>
           ))}
           <NavigationLink
-            href="/#join"
-            data-analytics-action="join_interest"
-            data-analytics-label="join_us"
+            href="mailto:contact@team1515.com?subject=I%27d%20like%20to%20mentor%20MorTorq"
+            data-analytics-action="mentor_interest"
+            data-analytics-label="mentorship"
             data-analytics-location="footer"
           >
-            Join us
+            Mentorship
           </NavigationLink>
         </div>
 

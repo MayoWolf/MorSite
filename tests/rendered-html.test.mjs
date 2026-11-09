@@ -4,6 +4,16 @@ import test from "node:test";
 
 const projectRoot = new URL("../", import.meta.url);
 
+test("site copy has no em dashes or team recruitment invitations", async () => {
+  for (const page of ["index", "competition", "leadership", "sponsors", "404"]) {
+    const html = await readFile(new URL(`../out/${page}.html`, import.meta.url), "utf8");
+    assert.doesNotMatch(html, /\u2014|&mdash;|&#(?:8212|x2014);/i, page);
+    assert.doesNotMatch(html, /join the team|join or mentor|join us|to%20join%20MorTorq/i, page);
+  }
+  const manifest = await readFile(new URL("../public/site.webmanifest", import.meta.url), "utf8");
+  assert.doesNotMatch(manifest, /\u2014/);
+});
+
 test("competition venue links use Apple Maps", async () => {
   const html = await readFile(new URL("../out/competition.html", import.meta.url), "utf8");
   const venueLinks = [...html.matchAll(/href="(https:\/\/maps\.apple\.com\/\?q=[^"]+)"/g)];
@@ -16,7 +26,10 @@ test("competition venue links use Apple Maps", async () => {
 test("exports a complete Netlify-ready site", async () => {
   const html = await readFile(new URL("../out/index.html", import.meta.url), "utf8");
 
-  assert.match(html, /<title>MorTorq — FRC Team 1515<\/title>/);
+  assert.match(html, /<title>MorTorq \| FRC Team 1515<\/title>/);
+  assert.match(html, /Contact about mentorship/);
+  assert.match(html, /subject=I%27d%20like%20to%20mentor%20MorTorq/);
+  assert.doesNotMatch(html, /join the team|join or mentor|join us|to%20join%20MorTorq/i);
   assert.match(html, /We build/);
   assert.match(html, /BIOCORE/);
   assert.match(html, /Back in the finals/);

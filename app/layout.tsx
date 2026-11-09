@@ -31,7 +31,7 @@ const monoFont = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.team1515.com"),
   title: {
-    default: "MorTorq — FRC Team 1515",
+    default: "MorTorq | FRC Team 1515",
     template: "%s | MorTorq",
   },
   description:
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "MorTorq — FRC Team 1515",
+    title: "MorTorq | FRC Team 1515",
     description:
       "Student-led. Mentor-powered. Building what’s next in Beverly Hills.",
     url: "/",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MorTorq — FRC Team 1515",
+    title: "MorTorq | FRC Team 1515",
     description:
       "Student-led. Mentor-powered. Building what’s next in Beverly Hills.",
     images: ["/og-image.jpg"],
@@ -100,7 +100,7 @@ export const viewport: Viewport = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  name: "MorTorq — FRC Team 1515",
+  name: "MorTorq | FRC Team 1515",
   alternateName: "Team 1515",
   url: "https://www.team1515.com",
   logo: "https://www.team1515.com/icon.png",
