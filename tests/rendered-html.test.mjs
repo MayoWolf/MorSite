@@ -30,6 +30,8 @@ test("exports a complete Netlify-ready site", async () => {
   assert.match(html, /href="\/leadership"[^>]*>[^<]*Meet the leads/);
   assert.match(html, /data-analytics-section="home_hero"/);
   assert.match(html, /data-analytics-action="sponsor_interest"/);
+  assert.match(html, /class="button button-small button-primary header-cta"/);
+  assert.match(html, /class="button button-light" href="#season"/);
   assert.match(html, /data-analytics-video="2026_finals_recap"/);
   assert.match(html, /contact@team1515\.com/);
   assert.match(html, /application\/ld\+json/);

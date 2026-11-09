@@ -159,7 +159,7 @@ export function MorTorqSite() {
             </p>
             <div className="hero-actions">
               <a
-                className="button button-primary"
+                className="button button-light"
                 href="#season"
                 data-analytics-action="explore_season"
                 data-analytics-label="explore_our_season"

@@ -89,7 +89,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
         </nav>
 
         <Link
-          className="button button-small button-light header-cta"
+          className="button button-small button-primary header-cta"
           href="/sponsors"
           data-analytics-action="sponsor_interest"
           data-analytics-label="sponsor_the_team"
@@ -121,7 +121,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
           aria-label="Mobile navigation"
         >
           <Link
-            className="button button-light mobile-sponsor-cta"
+            className="button button-primary mobile-sponsor-cta"
             href="/sponsors"
             data-analytics-action="sponsor_interest"
             data-analytics-label="sponsor_the_team"
