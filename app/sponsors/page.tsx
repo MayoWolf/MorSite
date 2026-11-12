@@ -25,6 +25,7 @@ const sponsors = [
 const partners = [
   { name: "Fabworks", mark: "fabworks", href: "https://www.fabworks.com/", width: 1000, height: 158 },
   { name: "RMFG", mark: "rmfg", href: "https://www.rmfg.com", width: 1337, height: 467, dark: true },
+  { name: "OSH Cut", mark: "osh-cut", href: "https://www.oshcut.com/", width: 1000, height: 205, dark: true },
 ];
 
 export default function Sponsors() {
@@ -57,7 +58,7 @@ export default function Sponsors() {
             id: "current-partners",
             title: "Our partners.",
             eyebrow: "Helping ideas take shape",
-            description: "Thank you to Fabworks and RMFG for partnering with MorTorq and supporting our work in the shop and on the field.",
+            description: "Thank you to our partners for supporting MorTorq’s work in the shop and on the field.",
             organizations: partners,
             analytics: "current_partners",
           },
