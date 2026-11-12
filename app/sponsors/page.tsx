@@ -25,7 +25,7 @@ const sponsors = [
 const partners = [
   { name: "Fabworks", mark: "fabworks", href: "https://www.fabworks.com/", width: 1000, height: 158 },
   { name: "RMFG", mark: "rmfg", href: "https://www.rmfg.com", width: 1337, height: 467, dark: true },
-  { name: "OSH Cut", mark: "osh-cut", href: "https://www.oshcut.com/", width: 1000, height: 205, dark: true },
+  { name: "OSH Cut", mark: "osh-cut", format: "svg", href: "https://www.oshcut.com/", width: 146, height: 32, dark: true },
 ];
 
 export default function Sponsors() {
@@ -72,7 +72,7 @@ export default function Sponsors() {
               {group.organizations.map((sponsor) => (
                 <a key={sponsor.mark} className="sponsor-card" href={sponsor.href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${sponsor.name} (opens in a new tab)`} data-analytics-action="outbound_link" data-analytics-label={sponsor.mark} data-analytics-location={group.analytics}>
                   <div className={`sponsor-logo${"dark" in sponsor && sponsor.dark ? " sponsor-logo-dark" : ""}`}>
-                    <Image src={`/images/sponsors/${sponsor.mark}.png`} alt={`${sponsor.name} logo`} width={sponsor.width} height={sponsor.height} />
+                    <Image src={`/images/sponsors/${sponsor.mark}.${"format" in sponsor ? sponsor.format : "png"}`} alt={`${sponsor.name} logo`} width={sponsor.width} height={sponsor.height} />
                   </div>
                   <div className="sponsor-caption"><h3>{sponsor.name}</h3><span>Visit website <ExternalLink aria-hidden="true" size={15} /></span></div>
                 </a>
