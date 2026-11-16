@@ -24,7 +24,7 @@ const sponsors = [
 
 const partners = [
   { name: "Fabworks", mark: "fabworks", href: "https://www.fabworks.com/", width: 1000, height: 158 },
-  { name: "RMFG", mark: "rmfg", href: "https://www.rmfg.com", width: 1337, height: 467, dark: true },
+  { name: "RMFG", mark: "rmfg", format: "svg", href: "https://www.rmfg.com", width: 1337, height: 467, dark: true },
   { name: "OSH Cut", mark: "osh-cut", format: "svg", href: "https://www.oshcut.com/", width: 146, height: 32, dark: true },
   { name: "Atomic Filament", mark: "atomic-filament", href: "https://atomicfilament.com/", width: 786, height: 312 },
 ];
